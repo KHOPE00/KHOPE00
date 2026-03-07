@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국방송작가협회 - KTRWA</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Playfair Display for the huge tight serif, and Noto Sans KR for body -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Base Styling & Logic -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <!-- Top Bar (Minimal, Editorial) -->
+    <header class="gnb">
+        <div class="gnb-container g-layout">
+            <a href="#" class="logo">
+                <span class="logo-mark"><i class="ph ph-pen-nib"></i></span>
+                <span class="logo-text serif">KTRWA.</span>
+            </a>
+
+            <nav class="main-menu">
+                <a href="#">협회소개</a>
+                <a href="#">정보공간</a>
+                <a href="#">입회안내</a>
+            </nav>
+
+            <div class="util-menu">
+                <button class="util-btn" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+                <a href="#" class="login-btn">LOGIN</a>
+                <button class="menu-btn" aria-label="Menu"
+                    style="background:#fff; border-radius:50%; width:40px; height:40px; border:1px solid #111; display:flex; align-items:center; justify-content:center;"><i
+                        class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- The Massive "OUTIL" style Hero Block -->
+        <section class="hero-block g-layout">
+            <div class="hero-yellow-card">
+
+                <!-- Vertical Text -->
+                <div class="vertical-text">
+                    <span class="line"></span>
+                    <span>DÉCOUVRIR KTRWA</span>
+                </div>
+
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <p class="hero-eyebrow">Korea TV & Radio<br>Writers Association</p>
+                        <h1 class="hero-title serif">writers</h1>
+                        <p class="hero-desc">
+                            역사와 전통의 방송작가 명문. 대한민국 방송 영상 산업의
+                            중심에서 작가들의 권익을 보호하고 지속 가능한 창작 환경을 만듭니다.
+                            더 나은 방송의 미래, 작가들과 함께 만들어갑니다.
+                        </p>
+                    </div>
+
+                    <div class="hero-right">
+                        <!-- Arch shaped image placeholder (mimicking the OUTIL photo) -->
+                        <div class="arch-image">
+                            <!-- In a real site, an <img> would go here. We use a pattern/color for layout. -->
+                            <!-- Placeholder person / creative vibe -->
+                            <div class="img-placeholder">
+                                <i class="ph ph-image"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu bubble top right of the yellow card -->
+                <div class="hero-menu-bubble">
+                    <span>MENU</span>
+                    <button class="bubble-btn"><i class="ph ph-list"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- The subtitle section below hero -->
+        <section class="manifesto g-layout text-center">
+            <h2 class="serif manifesto-text">
+                Leading the creative industry with <br>
+                <strong>sustainable, fair</strong>, and visionary environments<br>
+                for all broadcasters and writers.
+            </h2>
+        </section>
+
+        <!-- Bento Box Layout for Quick Links -->
+        <section class="quick-links bento-grid g-layout">
+
+            <a href="#" class="bento-card hover-lift">
+                <div class="icon-wrapper"><i class="ph ph-laptop"></i></div>
+                <span class="label">업무안내</span>
+            </a>
+
+            <a href="#" class="bento-card hover-lift">
+                <div class="icon-wrapper"><i class="ph ph-identification-card"></i></div>
+                <span class="label">입회안내</span>
+            </a>
+
+            <a href="#" class="bento-card hover-lift">
+                <div class="icon-wrapper"><i class="ph ph-file-text"></i></div>
+                <span class="label">표준집필계약서</span>
+            </a>
+
+            <a href="#" class="bento-card hover-lift">
+                <div class="icon-wrapper"><i class="ph ph-magnifying-glass-plus"></i></div>
+                <span class="label">회원/저작물 검색</span>
+            </a>
+
+            <a href="#" class="bento-card hover-lift">
+                <div class="icon-wrapper"><i class="ph ph-files"></i></div>
+                <span class="label">사용료 지급조회</span>
+            </a>
+
+            <a href="#" class="bento-card feature-card bento-span-2 hover-lift">
+                <div class="feature-content">
+                    <h3 class="serif">방송작가상</h3>
+                    <p>올해를 빛낸 최고의 작품과 작가</p>
+                    <div class="go-btn"><i class="ph ph-arrow-right"></i></div>
+                </div>
+                <!-- <div class="feature-icon"><i class="ph ph-trophy"></i></div> -->
+            </a>
+
+            <a href="#" class="bento-card hover-lift">
+                <div class="icon-wrapper"><i class="ph ph-buildings"></i></div>
+                <span class="label">리조트 이용</span>
+            </a>
+        </section>
+
+        <!-- Bottom Layout: Notice Board & Banners -->
+        <section class="info-section bento-grid g-layout">
+
+            <!-- Notice Board (Tabs) -->
+            <div class="board-card bento-card bento-span-2">
+                <div class="board-header">
+                    <div class="tabs">
+                        <button class="tab active">공지사항</button>
+                        <button class="tab">보도자료</button>
+                    </div>
+                    <button class="more-btn"><i class="ph ph-plus"></i></button>
+                </div>
+                <ul class="board-list">
+                    <li><a href="#"><span class="title">2026년도 정기총회(서면총회) 결과 보고 등</span><span
+                                class="date">03.03</span></a></li>
+                    <li><a href="#"><span class="title">영화 시나리오 저작권 대리·중개 업무 개시</span><span
+                                class="date">03.03</span></a></li>
+                    <li><a href="#"><span class="title">2026년도 정기총회 개최 안내</span><span class="date">02.09</span></a></li>
+                    <li><a href="#"><span class="title">2026년도 회비 납부 안내</span><span class="date">01.20</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Promotion Banner / Notice -->
+            <div class="promo-card bento-card dark-card">
+                <div class="promo-content">
+                    <h3 class="serif">회원 경조사<br>신청 접수 안내</h3>
+                    <a href="#" class="action-link">바로가기 <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Magazine/Webzine Issue Card (Image inside small box) -->
+            <div class="webzine-card bento-card hover-lift">
+                <div class="webzine-content">
+                    <div class="webzine-badge">여기 이 작가</div>
+                    <h3 class="serif">‘경제 덕후’로의<br>변신</h3>
+                    <p class="webzine-desc">SBS 러브FM<br>이은영 작가</p>
+                </div>
+                <div class="webzine-image"></div>
+                <div class="webzine-action">
+                    <a href="#" class="btn-circular" aria-label="자세히보기"><i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
