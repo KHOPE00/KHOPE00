@@ -519,62 +519,83 @@ button {
 
 /* Webzine Card (Small Box with Image) */
 .webzine-card {
-    background: #EAE8E4;
+    background: #EFECE7;
+    /* Warm beige background from the reference */
     border: 1px solid var(--c-border);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0;
-    /* Remove default padding to let image bleed */
-    overflow: hidden;
+    padding: 32px 24px;
     position: relative;
     border-radius: var(--radius-bento);
+    overflow: hidden;
 }
 
 .webzine-content {
-    padding: 32px 32px 0 32px;
     position: relative;
     z-index: 2;
+    margin-bottom: auto;
+    /* Push the image to the bottom */
 }
 
 .webzine-badge {
     display: inline-block;
     border: 1px solid var(--c-text-main);
-    padding: 4px 10px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 12px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
     color: var(--c-text-main);
 }
 
 .webzine-card h3 {
-    font-size: 2rem;
-    line-height: 1.1;
-    letter-spacing: -1px;
-    margin-bottom: 8px;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
     color: var(--c-text-main);
 }
 
 .webzine-desc {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-weight: 500;
     color: var(--c-text-sub);
     line-height: 1.4;
+    letter-spacing: -0.5px;
 }
 
+/* Picture resembling a book cover placed inside the card */
 .webzine-image {
-    height: 180px;
+    position: absolute;
+    bottom: 0px;
+    left: 24px;
+    right: 24px;
+    height: 200px;
     background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center top / cover no-repeat;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 40%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 40%);
-    margin-top: -20px;
+    border-radius: 12px 12px 0 0;
+    /* Rounded top like a book standing */
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
     z-index: 1;
+}
+
+/* The gradient fade overlay on top of the image (as seen in the reference) */
+.webzine-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(239, 236, 231, 0) 0%, rgba(239, 236, 231, 0.4) 100%);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .webzine-action {
     position: absolute;
-    bottom: 24px;
-    left: 32px;
+    bottom: 32px;
+    left: 40px;
     z-index: 3;
 }
 
@@ -633,6 +654,51 @@ button {
 }
 
 @media (max-width: 768px) {
+
+    /* Header Fixes */
+    .main-menu {
+        display: none;
+    }
+
+    .login-btn {
+        display: none;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+    }
+
+    .util-menu {
+        gap: 12px;
+    }
+
+    /* Hero Fixes to prevent overlap */
+    .hero-eyebrow {
+        font-size: 1.1rem;
+        max-width: 60%;
+        margin-bottom: 2px;
+        line-height: 1.3;
+    }
+
+    .hero-title {
+        font-size: 22vw;
+        letter-spacing: -2px;
+        margin-left: -3px;
+        line-height: 0.9;
+    }
+
+    .hero-menu-bubble {
+        top: 20px;
+        right: 15px;
+        transform: scale(0.9);
+        transform-origin: top right;
+    }
+
+    .hero-right {
+        margin-top: 20px;
+    }
+
+    /* Grid Fixes */
     .bento-grid {
         grid-template-columns: 1fr;
     }
@@ -650,10 +716,10 @@ button {
     }
 
     .hero-yellow-card {
-        padding: 40px 20px 0 20px;
+        padding: 30px 20px 0 20px;
     }
 
     .manifesto-text {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
