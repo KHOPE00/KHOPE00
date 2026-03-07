@@ -512,39 +512,39 @@ button {
     padding-bottom: 4px;
 }
 
-/* Webzine Card (Small Box with Image) */
+/* Webzine Card - 텍스트 위 / 이미지 아래 구조 */
 .webzine-card {
     background: #EFECE7;
-    /* Warm beige background from the reference */
     border: 1px solid var(--c-border);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 32px 24px;
+    padding: 0;
     position: relative;
     border-radius: var(--radius-bento);
     overflow: hidden;
+    min-height: 420px;
 }
 
+/* 텍스트 영역 - 카드 상단 고정 */
 .webzine-content {
+    padding: 28px 24px 20px;
     position: relative;
     z-index: 2;
-    margin-bottom: auto;
-    /* Push the image to the bottom */
+    flex-shrink: 0;
 }
 
 .webzine-badge {
     display: inline-block;
     border: 1px solid var(--c-text-main);
-    padding: 6px 14px;
-    font-size: 0.85rem;
+    padding: 5px 12px;
+    font-size: 0.82rem;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     color: var(--c-text-main);
 }
 
 .webzine-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.25;
     letter-spacing: -0.8px;
     margin-bottom: 8px;
@@ -552,43 +552,28 @@ button {
 }
 
 .webzine-desc {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--c-text-sub);
     line-height: 1.4;
     letter-spacing: -0.5px;
 }
 
-/* Picture resembling a book cover placed inside the card */
+/* 이미지 영역 - 남은 공간을 flex-grow로 채움 */
 .webzine-image {
-    position: absolute;
-    bottom: 0px;
-    left: 24px;
-    right: 24px;
-    height: 280px;
-    background: url('aaa.jpg') center 35% / cover no-repeat;
-    border-radius: 12px 12px 0 0;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    flex: 1;
+    min-height: 200px;
+    background: url('aaa.jpg') center 50% / cover no-repeat;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
 }
 
-/* The gradient fade overlay on top of the image (as seen in the reference) */
-.webzine-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 120px;
-    background: linear-gradient(to bottom, rgba(239, 236, 231, 0) 0%, rgba(239, 236, 231, 0.4) 100%);
-    z-index: 2;
-    pointer-events: none;
-}
-
+/* 이미지 위 화살표 버튼 */
 .webzine-action {
     position: absolute;
-    bottom: 32px;
-    left: 40px;
+    bottom: 20px;
+    left: 20px;
     z-index: 3;
 }
 
@@ -611,6 +596,7 @@ button {
     color: #fff;
     transform: translateX(4px);
 }
+
 
 /* =========================================
    Responsive
@@ -721,5 +707,25 @@ button {
 
     .manifesto-text {
         font-size: 1.8rem;
+    }
+
+    /* 웹진 카드 모바일 - 레이아웃 재설계 */
+    /* 웹진 카드 모바일: 패딩/이미지 높이 조정 */
+    .webzine-card {
+        min-height: unset;
+    }
+
+    .webzine-content {
+        padding: 20px 20px 16px;
+    }
+
+    .webzine-image {
+        min-height: 220px;
+        background-position: center 50%;
+    }
+
+    .webzine-action {
+        bottom: 16px;
+        left: 16px;
     }
 }
