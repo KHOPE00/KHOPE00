@@ -120,6 +120,7 @@ button {
 .main-menu a {
     position: relative;
     padding: 5px 0;
+    white-space: nowrap;
 }
 
 .main-menu a::after {
@@ -655,9 +656,15 @@ button {
 
 @media (max-width: 768px) {
 
-    /* Header Fixes */
+    /* Header Fixes for Mobile */
     .main-menu {
-        display: none;
+        display: flex;
+        gap: 12px;
+        font-size: 0.85rem;
+    }
+
+    .main-menu a {
+        white-space: nowrap;
     }
 
     .login-btn {
