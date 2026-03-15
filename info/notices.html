@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 — 한국방송작가협회 KTRWA</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .page-hero { background-color:#F8F9FA; margin-top:90px; border-bottom:1px solid var(--c-border); padding:52px 0 44px; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--c-text-sub); margin-bottom:22px; }
+    .breadcrumb a { color:var(--c-text-sub); transition:color 0.2s; display:inline-flex; align-items:center; gap:4px; text-decoration:none; }
+    .breadcrumb a:hover { color:var(--c-text-main); }
+    .breadcrumb-sep { opacity:0.35; font-size:0.75rem; }
+    .breadcrumb .bc-current { color:var(--c-text-main); font-weight:600; }
+    .page-title-en { font-family:var(--font-serif); font-style:italic; font-size:1rem; color:var(--c-text-sub); margin-bottom:6px; }
+    .page-title { font-size:2.8rem; font-weight:700; letter-spacing:-1.5px; color:var(--c-text-main); line-height:1.1; }
+    .sub-nav { background:#fff; border-bottom:1px solid var(--c-border); position:sticky; top:72px; z-index:90; }
+    .sub-nav-inner { display:flex; gap:0; overflow-x:auto; }
+    .sub-nav a { display:inline-flex; align-items:center; gap:7px; padding:16px 24px; font-size:0.92rem; font-weight:500; color:var(--c-text-sub); border-bottom:2px solid transparent; transition:color 0.2s,border-color 0.2s; white-space:nowrap; text-decoration:none; }
+    .sub-nav a:hover { color:var(--c-text-main); }
+    .sub-nav a.is-active { color:var(--c-text-main); font-weight:700; border-bottom-color:var(--c-mustard-dark); }
+    .page-content { padding:60px 0 100px; }
+    .board-list { list-style:none; margin:0; padding:0; }
+    .board-list li { border-bottom:1px solid var(--c-border); }
+    .board-list li:first-child { border-top:2px solid var(--c-text-main); }
+    .board-item { display:flex; align-items:center; gap:16px; padding:16px 0; }
+    .board-num { width:48px; text-align:center; font-size:.8rem; color:var(--c-text-sub); flex-shrink:0; }
+    .board-badge { flex-shrink:0; background:var(--c-mustard); color:#fff; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:3px; }
+    .board-title { flex:1; font-size:.9375rem; color:var(--c-text-main); text-decoration:none; line-height:1.4; }
+    .board-title:hover { color:var(--c-mustard-dark); text-decoration:underline; }
+    .board-date { font-size:.8rem; color:var(--c-text-sub); white-space:nowrap; }
+    .board-views { font-size:.8rem; color:var(--c-text-sub); opacity:0.6; white-space:nowrap; }
+    .board-pagination { display:flex; justify-content:center; gap:6px; margin-top:32px; }
+    .board-pagination a { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border:1px solid var(--c-border); border-radius:4px; font-size:.875rem; color:var(--c-text-sub); text-decoration:none; transition:all .2s; }
+    .board-pagination a.is-active { background:var(--c-text-main); color:#fff; border-color:var(--c-text-main); font-weight:700; }
+    .board-pagination a:hover { background:#F8F9FA; }
+    @media (max-width:600px) { .board-views { display:none; } .board-date { display:none; } }
+  </style>
+</head>
+<body>
+  <header class="gnb">
+    <div class="gnb-container g-layout">
+      <a href="../index.html" class="logo" aria-label="홈으로 이동">
+        <span class="logo-mark"><i class="ph ph-pen-nib"></i></span>
+        <span class="logo-text serif">KTRWA.</span>
+      </a>
+      <nav class="main-menu" aria-label="주요 메뉴">
+        <div class="menu-item">
+          <a href="../about/index.html">협회소개</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../about/index.html" role="menuitem">협회소개</a></li>
+            <li role="none"><a href="../about/greeting.html" role="menuitem">인사말</a></li>
+            <li role="none"><a href="../business-guide.html" role="menuitem">업무안내</a></li>
+            <li role="none"><a href="../about/history.html" role="menuitem">연혁</a></li>
+            <li role="none"><a href="../about/projects.html" role="menuitem">주요사업</a></li>
+            <li role="none"><a href="../about/charter.html" role="menuitem">정관</a></li>
+            <li role="none"><a href="../about/org-chart.html" role="menuitem">조직도</a></li>
+            <li role="none"><a href="../about/directions.html" role="menuitem">찾아오시는 길</a></li>
+            <li role="none"><a href="../about/writers-award.html" role="menuitem">방송작가상</a></li>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <a href="../info/notices.html" class="is-active-section">정보공간</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../info/notices.html" role="menuitem">공지사항</a></li>
+            <li role="none"><a href="../info/press.html" role="menuitem">보도자료</a></li>
+            <li role="none"><a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer" role="menuitem">방송작가 웹진</a></li>
+            <li role="none"><a href="../info/standard-contract.html" role="menuitem">표준집필계약서</a></li>
+            <li role="none"><a href="../info/copyright-guide.html" role="menuitem">저작 및 저작물</a></li>
+            <li role="none"><a href="../info/related-news.html" role="menuitem">유관단체 소식</a></li>
+            <li role="none"><a href="https://www.ktrwa.or.kr/web/copyright/copyrightWorkListPage.do" target="_blank" rel="noopener noreferrer" role="menuitem">회원/저작물 검색</a></li>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <a href="../join/index.html">입회안내</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../join/index.html" role="menuitem">입회안내</a></li>
+            <li role="none"><a href="../join/apply.html" role="menuitem">입회신청</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="util-menu">
+        <a class="util-btn" href="https://www.ktrwa.or.kr/web/intgSch/intgSchListPage.do" target="_blank" rel="noopener noreferrer" aria-label="통합검색 열기"><i class="ph ph-magnifying-glass"></i></a>
+        <a href="https://www.ktrwa.or.kr/web/user/login.do" target="_blank" rel="noopener noreferrer" class="login-btn">LOGIN</a>
+        <a class="menu-btn en-btn" href="https://www.ktrwa.or.kr/eng/index.do" target="_blank" rel="noopener noreferrer" aria-label="영문 페이지 열기">EN</a>
+        <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="메뉴 열기">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="g-layout">
+        <nav class="breadcrumb" aria-label="현재 위치">
+          <a href="../index.html"><i class="ph ph-house"></i> 홈</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="./notices.html">정보공간</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="bc-current">공지사항</span>
+        </nav>
+        <p class="page-title-en">Notices</p>
+        <h1 class="page-title">공지사항</h1>
+      </div>
+    </div>
+
+    <nav class="sub-nav" aria-label="정보공간 하위 메뉴">
+      <div class="g-layout sub-nav-inner">
+        <a href="./notices.html" class="is-active">공지사항</a>
+        <a href="./press.html">보도자료</a>
+        <a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer">방송작가 웹진</a>
+        <a href="./standard-contract.html">표준집필계약서</a>
+        <a href="./copyright-guide.html">저작 및 저작물</a>
+        <a href="./related-news.html">유관단체 소식</a>
+      </div>
+    </nav>
+
+    <section class="page-content">
+      <div class="g-layout">
+        <ul class="board-list">
+          <li>
+            <div class="board-item">
+              <span class="board-badge">공지</span>
+              <a class="board-title" href="#">2024년 방송작가 표준집필계약서 개정 안내</a>
+              <span class="board-date">2024-03-10</span>
+              <span class="board-views">조회 1,240</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-badge">공지</span>
+              <a class="board-title" href="#">2024년 정기총회 개최 안내</a>
+              <span class="board-date">2024-02-20</span>
+              <span class="board-views">조회 892</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">125</span>
+              <a class="board-title" href="#">2024년 상반기 방송작가 교육 프로그램 모집 안내</a>
+              <span class="board-date">2024-03-05</span>
+              <span class="board-views">조회 756</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">124</span>
+              <a class="board-title" href="#">OTT 플랫폼 방송작가 계약 관련 안내사항</a>
+              <span class="board-date">2024-02-28</span>
+              <span class="board-views">조회 1,052</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">123</span>
+              <a class="board-title" href="#">방송작가 저작권 세미나 개최 안내 (3월 예정)</a>
+              <span class="board-date">2024-02-15</span>
+              <span class="board-views">조회 634</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">122</span>
+              <a class="board-title" href="#">2023년 방송작가상 수상자 발표</a>
+              <span class="board-date">2024-01-20</span>
+              <span class="board-views">조회 2,150</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">121</span>
+              <a class="board-title" href="#">협회 사무국 연락처 변경 안내</a>
+              <span class="board-date">2024-01-05</span>
+              <span class="board-views">조회 489</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">120</span>
+              <a class="board-title" href="#">2024년도 회비 납부 안내</a>
+              <span class="board-date">2023-12-15</span>
+              <span class="board-views">조회 1,103</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">119</span>
+              <a class="board-title" href="#">방송작가 복지기금 신청 안내</a>
+              <span class="board-date">2023-11-30</span>
+              <span class="board-views">조회 720</span>
+            </div>
+          </li>
+          <li>
+            <div class="board-item">
+              <span class="board-num">118</span>
+              <a class="board-title" href="#">한국방송작가협회 홈페이지 개편 안내</a>
+              <span class="board-date">2023-11-01</span>
+              <span class="board-views">조회 1,580</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="board-pagination">
+          <a href="#" class="is-active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">›</a>
+        </div>
+
+        <p style="margin-top:20px;font-size:.8rem;color:var(--c-text-sub);text-align:center;">※ 위 목록은 예시 콘텐츠입니다. 실제 공지사항은 공식 사이트(www.ktrwa.or.kr)를 통해 확인하시기 바랍니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner g-layout">
+      <div class="footer-brand">
+        <span class="footer-logo-mark"><i class="ph ph-pen-nib"></i></span>
+        <span class="footer-logo-text">사단법인 한국방송작가협회</span>
+      </div>
+      <div class="footer-info">
+        <p>대표자: 정재홍 &nbsp;|&nbsp; 사업자등록번호: 116-82-03273</p>
+        <p>(07236) 서울시 영등포구 국회대로 750 금산빌딩 4층</p>
+        <p>Tel: 02-782-1696 &nbsp;|&nbsp; Fax: 02-783-3711</p>
+      </div>
+      <nav class="footer-policy" aria-label="정책 메뉴">
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=e12dcf81dcf14d9c89a2c59e89eadce5" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=44cd7eb5c91b4f18acd63d3d6d3a0699" target="_blank" rel="noopener noreferrer">이용약관</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=3a0a028a3d77434b882cbde4e4ef8e18" target="_blank" rel="noopener noreferrer">이메일 수집거부</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=f0ce2eb843bb4d54a5ce2a2cd2f67e49" target="_blank" rel="noopener noreferrer">찾아오시는 길</a>
+      </nav>
+      <p class="footer-copy">© Korea TV &amp; Radio Writers Association. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const gnb = document.querySelector('.gnb');
+    const mobileMenuButton = document.querySelector('.mobile-menu-btn');
+    mobileMenuButton?.addEventListener('click', () => {
+      const opened = gnb.classList.toggle('menu-open');
+      mobileMenuButton.setAttribute('aria-expanded', String(opened));
+      mobileMenuButton.setAttribute('aria-label', opened ? '메뉴 닫기' : '메뉴 열기');
+      const icon = mobileMenuButton.querySelector('i');
+      if (icon) icon.className = opened ? 'ph ph-x' : 'ph ph-list';
+    });
+    document.addEventListener('click', (e) => {
+      if (!gnb.contains(e.target)) {
+        gnb.classList.remove('menu-open');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+        mobileMenuButton?.setAttribute('aria-label', '메뉴 열기');
+        const icon = mobileMenuButton?.querySelector('i');
+        if (icon) icon.className = 'ph ph-list';
+      }
+    });
+  </script>
+</body>
+</html>
