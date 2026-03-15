@@ -6,54 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>한국방송작가협회 - KTRWA</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Using Playfair Display for the huge tight serif, and Noto Sans KR for body -->
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- Base Styling & Logic -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Icons -->
+    <link rel="stylesheet" href="style.css?v=20260313-5">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
-    <!-- Top Bar (Minimal, Editorial) -->
     <header class="gnb">
         <div class="gnb-container g-layout">
-            <a href="#" class="logo">
+            <a href="#" class="logo" aria-label="상단으로 이동">
                 <span class="logo-mark"><i class="ph ph-pen-nib"></i></span>
                 <span class="logo-text serif">KTRWA.</span>
             </a>
 
-            <nav class="main-menu">
-                <a href="https://www.ktrwa.or.kr/" target="_blank"
-                    onclick="return window.openKtrwaLink(event, '')">협회소개</a>
-                <a href="https://www.ktrwa.or.kr/" target="_blank"
-                    onclick="return window.openKtrwaLink(event, '')">정보공간</a>
-                <a href="https://www.ktrwa.or.kr/" target="_blank"
-                    onclick="return window.openKtrwaLink(event, '3b371ae9f3654da587d0a13e2072cd87')">입회안내</a>
+            <nav class="main-menu" aria-label="주요 메뉴">
+                <div class="menu-item">
+                    <a href="./about/index.html">협회소개</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="./about/index.html" role="menuitem">협회소개</a></li>
+                        <li role="none"><a href="./about/greeting.html" role="menuitem">인사말</a></li>
+                        <li role="none"><a href="./business-guide.html" role="menuitem">업무안내</a></li>
+                        <li role="none"><a href="./about/history.html" role="menuitem">연혁</a></li>
+                        <li role="none"><a href="./about/projects.html" role="menuitem">주요사업</a></li>
+                        <li role="none"><a href="./about/charter.html" role="menuitem">정관</a></li>
+                        <li role="none"><a href="./about/org-chart.html" role="menuitem">조직도</a></li>
+                        <li role="none"><a href="./about/directions.html" role="menuitem">찾아오시는 길</a></li>
+                        <li role="none"><a href="./about/writers-award.html" role="menuitem">방송작가상</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <a href="./info/notices.html">정보공간</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="./info/notices.html" role="menuitem">공지사항</a></li>
+                        <li role="none"><a href="./info/press.html" role="menuitem">보도자료</a></li>
+                        <li role="none"><a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer" role="menuitem">방송작가 웹진</a></li>
+                        <li role="none"><a href="./info/standard-contract.html" role="menuitem">표준집필계약서</a></li>
+                        <li role="none"><a href="./info/copyright-guide.html" role="menuitem">저작 및 저작물</a></li>
+                        <li role="none"><a href="./info/related-news.html" role="menuitem">유관단체 소식</a></li>
+                        <li role="none"><a href="https://www.ktrwa.or.kr/web/copyright/copyrightWorkListPage.do" target="_blank" rel="noopener noreferrer" role="menuitem">회원/저작물 검색</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <a href="./join/index.html">입회안내</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="./join/index.html" role="menuitem">입회안내</a></li>
+                        <li role="none"><a href="./join/apply.html" role="menuitem">입회신청</a></li>
+                    </ul>
+                </div>
             </nav>
 
             <div class="util-menu">
-                <button class="util-btn" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
-                <a href="https://www.ktrwa.or.kr/" target="_blank"
-                    onclick="return window.openKtrwaLink(event, 'javascript:;')" class="login-btn">LOGIN</a>
-                <button class="menu-btn" aria-label="Menu"
-                    style="background:#fff; border-radius:50%; width:40px; height:40px; border:1px solid #111; display:flex; align-items:center; justify-content:center;"><i
-                        class="ph ph-list"></i></button>
+                <a class="util-btn" href="https://www.ktrwa.or.kr/web/intgSch/intgSchListPage.do" target="_blank"
+                    rel="noopener noreferrer" data-action="searchPage" aria-label="통합검색 열기">
+                    <i class="ph ph-magnifying-glass"></i>
+                </a>
+                <a href="https://www.ktrwa.or.kr/web/user/login.do" target="_blank" rel="noopener noreferrer"
+                    data-action="84ac6b9727c04a6c8fd85e0ed7fbb9af"
+                    class="login-btn">LOGIN</a>
+                <a class="menu-btn en-btn" href="https://www.ktrwa.or.kr/eng/index.do" target="_blank"
+                    rel="noopener noreferrer" data-action="englishPage" aria-label="영문 페이지 열기">EN</a>
+                <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="메뉴 열기">
+                    <i class="ph ph-list"></i>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- The New White/Grey Hero Block -->
         <section class="hero-block-new">
-            <!-- Background Text layer -->
             <div class="hero-bg-text">
                 <div class="bg-line">WRITERS</div>
                 <div class="bg-line">WRITERS</div>
@@ -68,21 +93,21 @@
                         Association
                     </h1>
                     <p class="hero-desc-new">
-                        Lorem ipsum dolor sit amet, consectetuer<br>adipiscing elit, sed do eiusmod
+                        창작자의 권리와 방송 생태계의 지속 가능성을 함께 지키는<br>
+                        한국방송작가협회 안내 페이지입니다.
                     </p>
-                    <button class="hero-btn-new">Get Started</button>
+                    <a class="hero-btn-new"
+                        href="./join/index.html">입회 안내 보기</a>
                 </div>
 
                 <div class="hero-right-new">
-                    <!-- 3인 삽입 이미지 -->
                     <div class="hero-photo-frame">
-                        <img src="KakaoTalk_20260307_220823614.png" alt="방송작가 3인" class="hero-photo-img-new">
+                        <img src="KakaoTalk_20260307_220823614.png" alt="방송작가협회 대표 이미지" class="hero-photo-img-new">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The subtitle section below hero -->
         <section class="manifesto g-layout text-center">
             <h2 class="serif manifesto-text">
                 Leading the creative industry with <br>
@@ -91,53 +116,48 @@
             </h2>
         </section>
 
-        <!-- Bento Box Layout for Quick Links -->
         <section class="quick-links bento-grid g-layout">
-
-            <a href="https://www.ktrwa.or.kr/" target="_blank"
-                onclick="return window.openKtrwaLink(event, '9a29e47bb5614b8d82da02c6faf5e1f3')"
+            <a href="./business-guide.html"
                 class="bento-card hover-lift">
                 <div class="icon-wrapper"><i class="ph ph-laptop"></i></div>
                 <span class="label">업무안내</span>
             </a>
 
-            <a href="https://www.ktrwa.or.kr/" target="_blank"
-                onclick="return window.openKtrwaLink(event, '3b371ae9f3654da587d0a13e2072cd87')"
+            <a href="./join/index.html"
                 class="bento-card hover-lift">
                 <div class="icon-wrapper"><i class="ph ph-identification-card"></i></div>
                 <span class="label">입회안내</span>
             </a>
 
-            <a href="https://www.ktrwa.or.kr/" target="_blank"
-                onclick="return window.openKtrwaLink(event, 'e6d7c2042a8149a286ee3ea7112b73c6')"
+            <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=e5518d9b14ff41448d5c7ce801b750c5"
+                target="_blank" rel="noopener noreferrer" data-action="e6d7c2042a8149a286ee3ea7112b73c6"
                 class="bento-card hover-lift">
                 <div class="icon-wrapper"><i class="ph ph-file-text"></i></div>
                 <span class="label">표준집필계약서</span>
             </a>
 
-            <a href="https://www.ktrwa.or.kr/" target="_blank"
-                onclick="return window.openKtrwaLink(event, '616db1f3d4b74214b53edd786287e60f')"
+            <a href="https://www.ktrwa.or.kr/web/user/login.do" target="_blank"
+                rel="noopener noreferrer" data-action="616db1f3d4b74214b53edd786287e60f"
                 class="bento-card hover-lift">
                 <div class="icon-wrapper"><i class="ph ph-magnifying-glass-plus"></i></div>
                 <span class="label">회원/저작물 검색</span>
             </a>
 
-            <a href="https://www.ktrwa.or.kr/" target="_blank" onclick="return window.openKtrwaLink(event, 'alert')"
+            <a href="https://www.ktrwa.or.kr/web/user/login.do" target="_blank"
+                rel="noopener noreferrer" data-action="usageFeeHistory"
                 class="bento-card hover-lift">
                 <div class="icon-wrapper"><i class="ph ph-files"></i></div>
                 <span class="label">사용료 지급조회</span>
             </a>
 
-            <a href="https://www.ktrwa.or.kr/" target="_blank"
-                onclick="return window.openKtrwaLink(event, '73bd94c4d95a45fbbd0da960decc5cb8')"
+            <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=89f5fe3554344ac0ad7dee2f4726a008"
+                target="_blank" rel="noopener noreferrer" data-action="73bd94c4d95a45fbbd0da960decc5cb8"
                 class="bento-card feature-card bento-span-2 hover-lift">
-
-                <!-- Dark themed constellation background effect -->
                 <div class="feature-network-bg"></div>
 
                 <div class="feature-content">
                     <h3 class="serif">방송작가상</h3>
-                    <p>올해를 빛낸 최고의 작품과 작가</p>
+                    <p>창작자의 성과와 작품 세계를 조명하는 협회 주요 프로그램</p>
                     <div class="feature-book-icon">
                         <i class="ph-fill ph-book-open book-base"></i>
                         <i class="ph-fill ph-feather feather-part"></i>
@@ -152,61 +172,116 @@
                 </div>
             </a>
 
-            <a href="https://www.ktrwa.or.kr/" target="_blank" onclick="return window.openKtrwaLink(event, 'alert')"
+            <a href="https://www.ktrwa.or.kr/web/user/login.do" target="_blank"
+                rel="noopener noreferrer" data-action="resortCalendar"
                 class="bento-card hover-lift">
                 <div class="icon-wrapper"><i class="ph ph-buildings"></i></div>
                 <span class="label">리조트 이용</span>
             </a>
         </section>
 
-        <!-- Bottom Layout: Notice Board & Banners -->
         <section class="info-section bento-grid g-layout">
-
-            <!-- Notice Board (Tabs) -->
             <div class="board-card bento-card bento-span-2">
                 <div class="board-header">
                     <div class="tabs">
-                        <button class="tab active">공지사항</button>
-                        <button class="tab">보도자료</button>
+                        <button class="tab active" type="button" data-board-key="notice">공지사항</button>
+                        <button class="tab" type="button" data-board-key="press">보도자료</button>
+                        <button class="tab" type="button" data-board-key="fee">사용료지급안내</button>
+                        <button class="tab" type="button" data-board-key="related">유관단체소식</button>
                     </div>
-                    <button class="more-btn"><i class="ph ph-plus"></i></button>
+                    <div class="board-tools">
+                        <span class="board-sync-status" aria-live="polite">동기화 준비 중</span>
+                        <a class="more-btn" href="https://www.ktrwa.or.kr/web/board/boardContentsListPage.do?board_id=1"
+                            target="_blank" rel="noopener noreferrer" data-action="noticeBoard" aria-label="전체 보기">
+                            <i class="ph ph-plus"></i>
+                        </a>
+                    </div>
                 </div>
-                <ul class="board-list">
-                    <li><a href="#"><span class="title">2026년도 정기총회(서면총회) 결과 보고 등</span><span
-                                class="date">03.03</span></a></li>
-                    <li><a href="#"><span class="title">영화 시나리오 저작권 대리·중개 업무 개시</span><span
-                                class="date">03.03</span></a></li>
-                    <li><a href="#"><span class="title">2026년도 정기총회 개최 안내</span><span class="date">02.09</span></a></li>
-                    <li><a href="#"><span class="title">2026년도 회비 납부 안내</span><span class="date">01.20</span></a></li>
+                <ul class="board-list" data-active-board-key="notice">
+                    <li>
+                        <a href="https://www.ktrwa.or.kr/web/board/boardContentsListPage.do?board_id=1" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="title">협회 공지를 불러오는 중입니다.</span>
+                            <span class="date">--.--</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.ktrwa.or.kr/web/board/boardContentsListPage.do?board_id=1" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="title">잠시 후 최신 항목으로 갱신됩니다.</span>
+                            <span class="date">--.--</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
-            <!-- Promotion Banner / Notice -->
-            <div class="promo-card bento-card dark-card">
-                <div class="promo-content">
-                    <h3 class="serif">회원 경조사<br>신청 접수 안내</h3>
-                    <a href="https://www.ktrwa.or.kr/" target="_blank" onclick="return window.openKtrwaLink(event, '')"
-                        class="action-link">바로가기 <i class="ph ph-arrow-right"></i></a>
+            <div class="promo-card bento-card dark-card" data-popup-source="fallback">
+                <div class="promo-shell">
+                    <div class="promo-copy sr-only" aria-live="polite">
+                        <span class="promo-status">공식 메인 확인 중</span>
+                        <h3 class="serif promo-title">협회 메인 캘린더 팝업</h3>
+                        <p class="promo-desc">공식 홈페이지 첫 진입 레이어 팝업 이미지를 그대로 반영합니다.</p>
+                        <div class="promo-meta">
+                            <span class="promo-date">공식 메인 기준</span>
+                            <span class="promo-count">링크 유무도 함께 따라갑니다</span>
+                        </div>
+                        <a href="https://www.ktrwa.or.kr/contents/popup/popup20260304.png" target="_blank"
+                            rel="noopener noreferrer" data-action="https://www.ktrwa.or.kr/contents/popup/popup20260304.png"
+                            class="action-link promo-link" hidden>
+                            <span class="promo-link-text">원본 열기</span><i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <a href="https://www.ktrwa.or.kr/contents/popup/popup20260304.png" target="_blank"
+                        rel="noopener noreferrer"
+                        data-action="https://www.ktrwa.or.kr/contents/popup/popup20260304.png" class="promo-visual-link"
+                        aria-label="공식 메인 캘린더 팝업 열기">
+                        <div class="promo-visual-frame">
+                            <div class="promo-placeholder">캘린더 팝업을 불러오는 중입니다.</div>
+                            <img class="promo-image" src="" alt="협회 메인 캘린더 팝업" hidden>
+                        </div>
+                    </a>
                 </div>
             </div>
 
-            <!-- Magazine/Webzine Issue Card (Image inside small box) -->
-            <a href="http://www.ktrwawebzine.kr" target="_blank" class="webzine-card bento-card hover-lift">
+            <a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer"
+                data-action="https://www.ktrwawebzine.kr/"
+                class="webzine-card bento-card hover-lift">
                 <div class="webzine-content">
-                    <div class="webzine-badge">여기 이 작가</div>
-                    <h3 class="serif">'경제 덕후'로의<br>변신</h3>
-                    <p class="webzine-desc">SBS 러브FM<br>이은영 작가</p>
+                    <div class="webzine-badge">특집 방송작가</div>
+                    <h3 class="serif">'경제 시사'에서<br>변화</h3>
+                    <p class="webzine-desc">SBS 러브FM<br>이진우의 방송작가</p>
                 </div>
                 <div class="webzine-image"></div>
                 <div class="webzine-action">
-                    <span class="btn-circular" aria-label="자세히보기"><i class="ph ph-arrow-right"></i></span>
+                    <span class="btn-circular" aria-label="자세히 보기"><i class="ph ph-arrow-right"></i></span>
                 </div>
             </a>
-
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <footer class="site-footer">
+        <div class="footer-inner g-layout">
+            <div class="footer-brand">
+                <span class="footer-logo-mark"><i class="ph ph-pen-nib"></i></span>
+                <span class="footer-logo-text">사단법인 한국방송작가협회</span>
+            </div>
+            <div class="footer-info">
+                <p>대표자: 정재홍 &nbsp;|&nbsp; 사업자등록번호: 116-82-03273</p>
+                <p>(07236) 서울시 영등포구 국회대로 750 금산빌딩 4층</p>
+                <p>Tel: 02-782-1696 &nbsp;|&nbsp; Fax: 02-783-3711</p>
+            </div>
+            <nav class="footer-policy" aria-label="정책 메뉴">
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=e12dcf81dcf14d9c89a2c59e89eadce5" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=44cd7eb5c91b4f18acd63d3d6d3a0699" target="_blank" rel="noopener noreferrer">이용약관</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=3a0a028a3d77434b882cbde4e4ef8e18" target="_blank" rel="noopener noreferrer">이메일 수집거부</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=f0ce2eb843bb4d54a5ce2a2cd2f67e49" target="_blank" rel="noopener noreferrer">찾아오시는 길</a>
+            </nav>
+            <p class="footer-copy">© Korea TV &amp; Radio Writers Association. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=20260313-5"></script>
 </body>
 
 </html>

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무안내 — 한국방송작가협회 KTRWA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* ===================================
+           업무안내 서브페이지 전용 스타일
+        =================================== */
+
+        /* --- Page Hero (홈페이지와 동일한 계열) --- */
+        .page-hero {
+            background-color: #F8F9FA;
+            margin-top: 90px;
+            border-bottom: 1px solid var(--c-border);
+            padding: 52px 0 44px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--c-text-sub);
+            margin-bottom: 22px;
+        }
+
+        .breadcrumb a {
+            color: var(--c-text-sub);
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--c-text-main);
+        }
+
+        .breadcrumb-sep {
+            opacity: 0.35;
+            font-size: 0.75rem;
+        }
+
+        .breadcrumb .bc-current {
+            color: var(--c-text-main);
+            font-weight: 600;
+        }
+
+        .page-title-en {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--c-text-sub);
+            margin-bottom: 6px;
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            color: var(--c-text-main);
+            line-height: 1.1;
+        }
+
+        /* --- Content layout --- */
+        .page-content {
+            padding: 60px 0 100px;
+        }
+
+        .content-section {
+            margin-bottom: 64px;
+        }
+
+        /* --- Section heading --- */
+        .section-heading {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--c-text-main);
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--c-text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading i {
+            color: var(--c-mustard-dark);
+            font-size: 1.25rem;
+        }
+
+        /* --- Info Table --- */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table tr {
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .info-table tr:first-child {
+            border-top: 1px solid var(--c-border);
+        }
+
+        .info-table th {
+            width: 170px;
+            padding: 18px 20px;
+            background-color: #F5F3EE;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--c-text-sub);
+            text-align: left;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .info-table td {
+            padding: 18px 24px;
+            font-size: 0.95rem;
+            color: var(--c-text-main);
+            line-height: 1.65;
+        }
+
+        .info-table td .sub-text {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--c-text-sub);
+            margin-top: 2px;
+        }
+
+        .info-table td a {
+            color: var(--c-text-main);
+            border-bottom: 1px solid var(--c-border);
+            transition: border-color 0.2s;
+        }
+
+        .info-table td a:hover {
+            border-bottom-color: var(--c-mustard-dark);
+        }
+
+        /* --- Org Chart --- */
+        .org-chart-wrap {
+            background: #fff;
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-bento);
+            padding: 48px 32px 40px;
+            overflow-x: auto;
+        }
+
+        .org-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 560px;
+        }
+
+        /* Node styles */
+        .onode {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .onode-top {
+            background: var(--c-text-main);
+            color: #fff;
+            padding: 12px 36px;
+            font-size: 1.05rem;
+            letter-spacing: -0.3px;
+        }
+
+        .onode-exec {
+            background: var(--c-mustard-dark);
+            color: #fff;
+        }
+
+        .onode-advisory {
+            background: #fff;
+            color: var(--c-text-main);
+            border: 1.5px solid var(--c-text-main);
+        }
+
+        .onode-mgr {
+            background: #F0EDE8;
+            color: var(--c-text-main);
+            border: 1px solid var(--c-border);
+        }
+
+        .onode-dept {
+            background: #fff;
+            color: var(--c-text-main);
+            border: 1px solid var(--c-border);
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+
+        .onode-team {
+            background: #FAF8F4;
+            color: var(--c-text-sub);
+            border: 1px dashed var(--c-border);
+            font-weight: 400;
+            font-size: 0.82rem;
+            padding: 6px 14px;
+        }
+
+        /* Vertical connector */
+        .ov-line {
+            width: 2px;
+            background: var(--c-border);
+            margin: 0 auto;
+        }
+
+        .ov-line-sm { height: 20px; }
+        .ov-line-md { height: 28px; }
+
+        /* Horizontal row */
+        .org-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        /* Horizontal bar above a row of nodes */
+        .org-row::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            background: var(--c-border);
+            width: calc(100% - 60px);
+        }
+
+        /* Single node row (no horizontal bar needed) */
+        .org-row.single-node::before {
+            display: none;
+        }
+
+        .org-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top connector stub per column */
+        .org-col > .onode::before {
+            content: none;
+        }
+
+        /* --- Dept Cards --- */
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .dept-card {
+            background: #fff;
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-bento);
+            padding: 28px 28px 24px;
+            transition: var(--transition-smooth);
+        }
+
+        .dept-card:hover {
+            border-color: var(--c-mustard);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .dept-card-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .dept-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #F5F3EE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--c-mustard-dark);
+            flex-shrink: 0;
+        }
+
+        .dept-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--c-text-main);
+            letter-spacing: -0.4px;
+        }
+
+        .dept-teams {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 16px;
+        }
+
+        .dept-team-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            background: #F8F6F2;
+            border: 1px solid var(--c-border);
+            border-radius: 20px;
+            font-size: 0.82rem;
+            color: var(--c-text-sub);
+            font-weight: 500;
+        }
+
+        .dept-duties {
+            font-size: 0.88rem;
+            color: var(--c-text-sub);
+            line-height: 1.7;
+        }
+
+        .dept-duties li {
+            list-style: none;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .dept-duties li::before {
+            content: '·';
+            position: absolute;
+            left: 4px;
+            color: var(--c-mustard-dark);
+            font-weight: 700;
+        }
+
+        /* --- Contact Box --- */
+        .contact-box {
+            background: var(--c-text-main);
+            color: #fff;
+            border-radius: var(--radius-bento);
+            padding: 40px 44px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .contact-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--c-mustard);
+            margin-bottom: 10px;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .contact-value a {
+            color: #fff;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Active nav indicator for subpages */
+        .main-menu a.is-active-section::after {
+            width: 100%;
+        }
+
+        /* ===================================
+           Responsive
+        =================================== */
+        @media (max-width: 1024px) {
+            .dept-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 44px 0 36px;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+                letter-spacing: -1px;
+            }
+
+            .info-table th {
+                width: 100px;
+                padding: 14px 14px;
+                font-size: 0.84rem;
+            }
+
+            .info-table td {
+                padding: 14px 16px;
+                font-size: 0.88rem;
+            }
+
+            .org-chart-wrap {
+                padding: 28px 16px 24px;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+                padding: 28px 24px;
+                gap: 24px;
+            }
+
+            .page-content {
+                padding: 44px 0 72px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== 공통 헤더 (index.html 동일) ===== -->
+    <header class="gnb">
+        <div class="gnb-container g-layout">
+            <a href="./index.html" class="logo" aria-label="홈으로 이동">
+                <span class="logo-mark"><i class="ph ph-pen-nib"></i></span>
+                <span class="logo-text serif">KTRWA.</span>
+            </a>
+
+            <nav class="main-menu" aria-label="주요 메뉴">
+                <div class="menu-item">
+                    <a href="./about/index.html" class="is-active-section">협회소개</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="./about/index.html" role="menuitem">협회소개</a></li>
+                        <li role="none"><a href="./about/greeting.html" role="menuitem">인사말</a></li>
+                        <li role="none"><a href="./business-guide.html" role="menuitem">업무안내</a></li>
+                        <li role="none"><a href="./about/history.html" role="menuitem">연혁</a></li>
+                        <li role="none"><a href="./about/projects.html" role="menuitem">주요사업</a></li>
+                        <li role="none"><a href="./about/charter.html" role="menuitem">정관</a></li>
+                        <li role="none"><a href="./about/org-chart.html" role="menuitem">조직도</a></li>
+                        <li role="none"><a href="./about/directions.html" role="menuitem">찾아오시는 길</a></li>
+                        <li role="none"><a href="./about/writers-award.html" role="menuitem">방송작가상</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <a href="./info/notices.html">정보공간</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="./info/notices.html" role="menuitem">공지사항</a></li>
+                        <li role="none"><a href="./info/press.html" role="menuitem">보도자료</a></li>
+                        <li role="none"><a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer" role="menuitem">방송작가 웹진</a></li>
+                        <li role="none"><a href="./info/standard-contract.html" role="menuitem">표준집필계약서</a></li>
+                        <li role="none"><a href="./info/copyright-guide.html" role="menuitem">저작 및 저작물</a></li>
+                        <li role="none"><a href="./info/related-news.html" role="menuitem">유관단체 소식</a></li>
+                        <li role="none"><a href="https://www.ktrwa.or.kr/web/copyright/copyrightWorkListPage.do" target="_blank" rel="noopener noreferrer" role="menuitem">회원/저작물 검색</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <a href="./join/index.html">입회안내</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="./join/index.html" role="menuitem">입회안내</a></li>
+                        <li role="none"><a href="./join/apply.html" role="menuitem">입회신청</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="util-menu">
+                <a class="util-btn"
+                    href="https://www.ktrwa.or.kr/web/intgSch/intgSchListPage.do"
+                    target="_blank" rel="noopener noreferrer" aria-label="통합검색 열기">
+                    <i class="ph ph-magnifying-glass"></i>
+                </a>
+                <a href="https://www.ktrwa.or.kr/web/user/login.do"
+                    target="_blank" rel="noopener noreferrer" class="login-btn">LOGIN</a>
+                <a class="menu-btn en-btn"
+                    href="https://www.ktrwa.or.kr/eng/index.do"
+                    target="_blank" rel="noopener noreferrer" aria-label="영문 페이지 열기">EN</a>
+                <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="메뉴 열기">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== 페이지 타이틀 영역 ===== -->
+        <div class="page-hero">
+            <div class="g-layout">
+                <nav class="breadcrumb" aria-label="현재 위치">
+                    <a href="./index.html"><i class="ph ph-house"></i> 홈</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <span>협회소개</span>
+                    <span class="breadcrumb-sep">/</span>
+                    <span class="bc-current">업무안내</span>
+                </nav>
+                <p class="page-title-en">Business Guide</p>
+                <h1 class="page-title">업무안내</h1>
+            </div>
+        </div>
+
+        <!-- ===== 본문 콘텐츠 ===== -->
+        <div class="page-content g-layout">
+
+            <!-- 1. 기관 기본정보 -->
+            <section class="content-section" aria-labelledby="sec-info">
+                <h2 class="section-heading" id="sec-info">
+                    <i class="ph ph-info"></i>기관 기본정보
+                </h2>
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">기관명</th>
+                            <td>
+                                사단법인 한국방송작가협회
+                                <span class="sub-text">Korea TV &amp; Radio Writers Association (KTRWA)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">대표자</th>
+                            <td>정재홍</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">사업자등록번호</th>
+                            <td>116-82-03273</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주소</th>
+                            <td>(07236) 서울시 영등포구 국회대로 750 금산빌딩 4층</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">전화</th>
+                            <td><a href="tel:0227821696">02-782-1696</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">팩스</th>
+                            <td>02-783-3711</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 2. 조직도 -->
+            <section class="content-section" aria-labelledby="sec-org">
+                <h2 class="section-heading" id="sec-org">
+                    <i class="ph ph-tree-structure"></i>조직도
+                </h2>
+                <div class="org-chart-wrap">
+                    <div class="org-tree" role="img" aria-label="한국방송작가협회 조직도">
+
+                        <!-- 이사장 -->
+                        <div class="onode onode-top">이사장</div>
+                        <div class="ov-line ov-line-md"></div>
+
+                        <!-- 2단: 부이사장·감사·위원장·상임이사 -->
+                        <div class="org-row" style="gap:10px;">
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-advisory">부이사장</div>
+                            </div>
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-advisory">감사</div>
+                            </div>
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-advisory">라디오저작권위원장</div>
+                            </div>
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-advisory">저작권위원장</div>
+                            </div>
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-exec">상임이사</div>
+                            </div>
+                        </div>
+
+                        <!-- 상임이사 아래 연결선 -->
+                        <div style="display:flex; justify-content:flex-end; width:100%; padding-right: calc(0px);">
+                            <div class="ov-line ov-line-md" style="margin-right: 0;"></div>
+                        </div>
+
+                        <!-- 3단: 교육원장·사무국장 -->
+                        <div class="org-row single-node" style="gap:12px; margin-right: 0;">
+                            <div class="org-col" style="margin-left: auto;">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-mgr">교육원장</div>
+                            </div>
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-exec">사무국장</div>
+                            </div>
+                        </div>
+
+                        <div class="ov-line ov-line-md"></div>
+
+                        <!-- 4단: 4개 부서 -->
+                        <div class="org-row" style="gap:10px; align-items:flex-start;">
+                            <!-- 뉴미디어사업본부 -->
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-dept">뉴미디어사업본부</div>
+                                <div class="ov-line ov-line-sm"></div>
+                                <div style="display:flex;flex-direction:column;gap:6px;align-items:center;">
+                                    <div class="onode onode-team">뉴미디어사업팀</div>
+                                    <div class="onode onode-team">신탁사업팀</div>
+                                    <div class="onode onode-team">법무팀</div>
+                                </div>
+                            </div>
+                            <!-- 경영지원부 -->
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-dept">경영지원부</div>
+                                <div class="ov-line ov-line-sm"></div>
+                                <div style="display:flex;flex-direction:column;gap:6px;align-items:center;">
+                                    <div class="onode onode-team">경영관리팀</div>
+                                    <div class="onode onode-team">재무회계팀</div>
+                                    <div class="onode onode-team">홍보팀</div>
+                                </div>
+                            </div>
+                            <!-- 분배관리부 -->
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-dept">분배관리부</div>
+                                <div class="ov-line ov-line-sm"></div>
+                                <div style="display:flex;flex-direction:column;gap:6px;align-items:center;">
+                                    <div class="onode onode-team">분배관리팀</div>
+                                </div>
+                            </div>
+                            <!-- 교육연수부 -->
+                            <div class="org-col">
+                                <div class="ov-line ov-line-sm"></div>
+                                <div class="onode onode-dept">교육연수부</div>
+                                <div class="ov-line ov-line-sm"></div>
+                                <div style="display:flex;flex-direction:column;gap:6px;align-items:center;">
+                                    <div class="onode onode-team">교육연수팀</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /org-tree -->
+                </div><!-- /org-chart-wrap -->
+            </section>
+
+            <!-- 3. 부서별 업무 -->
+            <section class="content-section" aria-labelledby="sec-dept">
+                <h2 class="section-heading" id="sec-dept">
+                    <i class="ph ph-buildings"></i>부서별 업무
+                </h2>
+                <div class="dept-grid">
+
+                    <!-- 뉴미디어사업본부 -->
+                    <div class="dept-card">
+                        <div class="dept-card-top">
+                            <div class="dept-icon"><i class="ph ph-monitor-play"></i></div>
+                            <div class="dept-name">뉴미디어사업본부</div>
+                        </div>
+                        <div class="dept-teams">
+                            <span class="dept-team-tag">뉴미디어사업팀</span>
+                            <span class="dept-team-tag">신탁사업팀</span>
+                            <span class="dept-team-tag">법무팀</span>
+                        </div>
+                        <ul class="dept-duties">
+                            <li>뉴미디어 저작권 계약 및 사업 운영</li>
+                            <li>방송 저작물 신탁 관리 업무</li>
+                            <li>저작권 관련 법무 지원 및 자문</li>
+                            <li>OTT·VOD 등 신규 플랫폼 대응 업무</li>
+                        </ul>
+                    </div>
+
+                    <!-- 경영지원부 -->
+                    <div class="dept-card">
+                        <div class="dept-card-top">
+                            <div class="dept-icon"><i class="ph ph-briefcase"></i></div>
+                            <div class="dept-name">경영지원부</div>
+                        </div>
+                        <div class="dept-teams">
+                            <span class="dept-team-tag">경영관리팀</span>
+                            <span class="dept-team-tag">재무회계팀</span>
+                            <span class="dept-team-tag">홍보팀</span>
+                        </div>
+                        <ul class="dept-duties">
+                            <li>협회 전반 경영 관리 및 행정 지원</li>
+                            <li>예산 편성·집행·결산 및 회계 관리</li>
+                            <li>협회 홍보 및 대외 커뮤니케이션</li>
+                            <li>웹진·SNS 등 미디어 콘텐츠 운영</li>
+                        </ul>
+                    </div>
+
+                    <!-- 분배관리부 -->
+                    <div class="dept-card">
+                        <div class="dept-card-top">
+                            <div class="dept-icon"><i class="ph ph-coins"></i></div>
+                            <div class="dept-name">분배관리부</div>
+                        </div>
+                        <div class="dept-teams">
+                            <span class="dept-team-tag">분배관리팀</span>
+                        </div>
+                        <ul class="dept-duties">
+                            <li>저작권 사용료 징수 및 분배 관리</li>
+                            <li>회원 저작물 사용 내역 집계 및 정산</li>
+                            <li>분배 기준 수립 및 분배 내역 안내</li>
+                            <li>사용료 지급 조회 관련 민원 처리</li>
+                        </ul>
+                    </div>
+
+                    <!-- 교육연수부 -->
+                    <div class="dept-card">
+                        <div class="dept-card-top">
+                            <div class="dept-icon"><i class="ph ph-graduation-cap"></i></div>
+                            <div class="dept-name">교육연수부</div>
+                        </div>
+                        <div class="dept-teams">
+                            <span class="dept-team-tag">교육연수팀</span>
+                        </div>
+                        <ul class="dept-duties">
+                            <li>방송작가 교육 프로그램 기획·운영</li>
+                            <li>신진 작가 발굴 및 연수 과정 관리</li>
+                            <li>방송 관련 특강·세미나·워크숍 진행</li>
+                            <li>교육원 운영 및 수강생 관리</li>
+                        </ul>
+                    </div>
+
+                </div><!-- /dept-grid -->
+            </section>
+
+            <!-- 4. 연락처 안내 -->
+            <section class="content-section" aria-labelledby="sec-contact">
+                <h2 class="section-heading" id="sec-contact">
+                    <i class="ph ph-map-pin"></i>연락처 안내
+                </h2>
+                <div class="contact-box">
+                    <div class="contact-item">
+                        <div class="contact-label">Address</div>
+                        <div class="contact-value">
+                            서울시 영등포구<br>
+                            국회대로 750<br>
+                            금산빌딩 4층 (07236)
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Phone &amp; Fax</div>
+                        <div class="contact-value">
+                            Tel. <a href="tel:0227821696">02-782-1696</a><br>
+                            Fax. 02-783-3711
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Online</div>
+                        <div class="contact-value">
+                            <a href="https://www.ktrwa.or.kr" target="_blank" rel="noopener noreferrer">
+                                www.ktrwa.or.kr
+                            </a><br>
+                            <a href="https://www.ktrwawebzine.kr" target="_blank" rel="noopener noreferrer">
+                                방송작가 웹진
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /page-content -->
+    </main>
+
+    <script>
+        // 모바일 메뉴 토글 (index.html의 script.js와 동일 로직, 최소 인라인 버전)
+        const gnb = document.querySelector('.gnb');
+        const mobileMenuButton = document.querySelector('.mobile-menu-btn');
+
+        mobileMenuButton?.addEventListener('click', () => {
+            const opened = gnb.classList.toggle('menu-open');
+            mobileMenuButton.setAttribute('aria-expanded', String(opened));
+            mobileMenuButton.setAttribute('aria-label', opened ? '메뉴 닫기' : '메뉴 열기');
+            const icon = mobileMenuButton.querySelector('i');
+            if (icon) icon.className = opened ? 'ph ph-x' : 'ph ph-list';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!gnb.contains(e.target)) {
+                gnb.classList.remove('menu-open');
+                mobileMenuButton?.setAttribute('aria-expanded', 'false');
+                mobileMenuButton?.setAttribute('aria-label', '메뉴 열기');
+                const icon = mobileMenuButton?.querySelector('i');
+                if (icon) icon.className = 'ph ph-list';
+            }
+        });
+    </script>
+
+    <footer class="site-footer">
+        <div class="footer-inner g-layout">
+            <div class="footer-brand">
+                <span class="footer-logo-mark"><i class="ph ph-pen-nib"></i></span>
+                <span class="footer-logo-text">사단법인 한국방송작가협회</span>
+            </div>
+            <div class="footer-info">
+                <p>대표자: 정재홍 &nbsp;|&nbsp; 사업자등록번호: 116-82-03273</p>
+                <p>(07236) 서울시 영등포구 국회대로 750 금산빌딩 4층</p>
+                <p>Tel: 02-782-1696 &nbsp;|&nbsp; Fax: 02-783-3711</p>
+            </div>
+            <nav class="footer-policy" aria-label="정책 메뉴">
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=e12dcf81dcf14d9c89a2c59e89eadce5" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=44cd7eb5c91b4f18acd63d3d6d3a0699" target="_blank" rel="noopener noreferrer">이용약관</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=3a0a028a3d77434b882cbde4e4ef8e18" target="_blank" rel="noopener noreferrer">이메일 수집거부</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=f0ce2eb843bb4d54a5ce2a2cd2f67e49" target="_blank" rel="noopener noreferrer">찾아오시는 길</a>
+            </nav>
+            <p class="footer-copy">© Korea TV &amp; Radio Writers Association. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
