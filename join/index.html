@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입회안내 — 한국방송작가협회 KTRWA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* ===================================
+           입회안내 서브페이지 전용 스타일
+           (business-guide.html 동일 시스템 계승)
+        =================================== */
+
+        /* --- Page Hero --- */
+        .page-hero {
+            background-color: #F8F9FA;
+            margin-top: 90px;
+            border-bottom: 1px solid var(--c-border);
+            padding: 52px 0 44px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--c-text-sub);
+            margin-bottom: 22px;
+        }
+
+        .breadcrumb a {
+            color: var(--c-text-sub);
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .breadcrumb a:hover { color: var(--c-text-main); }
+
+        .breadcrumb-sep {
+            opacity: 0.35;
+            font-size: 0.75rem;
+        }
+
+        .breadcrumb .bc-current {
+            color: var(--c-text-main);
+            font-weight: 600;
+        }
+
+        .page-title-en {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--c-text-sub);
+            margin-bottom: 6px;
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            color: var(--c-text-main);
+            line-height: 1.1;
+        }
+
+        /* --- Sub Navigation (입회안내 / 입회신청 탭) --- */
+        .sub-nav {
+            background: #fff;
+            border-bottom: 1px solid var(--c-border);
+            position: sticky;
+            top: 72px;
+            z-index: 90;
+        }
+
+        .sub-nav-inner {
+            display: flex;
+            gap: 0;
+        }
+
+        .sub-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 16px 24px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--c-text-sub);
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .sub-nav a:hover { color: var(--c-text-main); }
+
+        .sub-nav a.is-active {
+            color: var(--c-text-main);
+            font-weight: 700;
+            border-bottom-color: var(--c-mustard-dark);
+        }
+
+        /* --- Content Layout --- */
+        .page-content {
+            padding: 60px 0 100px;
+        }
+
+        .content-section {
+            margin-bottom: 72px;
+        }
+
+        /* --- Section Heading --- */
+        .section-heading {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--c-text-main);
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--c-text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading i {
+            color: var(--c-mustard-dark);
+            font-size: 1.25rem;
+        }
+
+        /* --- Info Table --- */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table tr {
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .info-table tr:first-child {
+            border-top: 1px solid var(--c-border);
+        }
+
+        .info-table th {
+            width: 170px;
+            padding: 18px 20px;
+            background-color: #F5F3EE;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--c-text-sub);
+            text-align: left;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .info-table td {
+            padding: 18px 24px;
+            font-size: 0.95rem;
+            color: var(--c-text-main);
+            line-height: 1.7;
+        }
+
+        .info-table td .sub-text {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--c-text-sub);
+            margin-top: 4px;
+        }
+
+        /* --- 자격 카드 그리드 --- */
+        .qual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .qual-card {
+            background: #fff;
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-bento);
+            padding: 28px 28px 24px;
+        }
+
+        .qual-card-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .qual-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #F5F3EE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--c-mustard-dark);
+            flex-shrink: 0;
+        }
+
+        .qual-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--c-text-main);
+            letter-spacing: -0.4px;
+        }
+
+        .qual-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .qual-items li {
+            font-size: 0.9rem;
+            color: var(--c-text-main);
+            line-height: 1.65;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .qual-items li::before {
+            content: '·';
+            position: absolute;
+            left: 4px;
+            color: var(--c-mustard-dark);
+            font-weight: 700;
+        }
+
+        .qual-items li .note {
+            display: block;
+            font-size: 0.83rem;
+            color: var(--c-text-sub);
+            margin-top: 2px;
+        }
+
+        /* 전체 너비 카드 */
+        .qual-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* --- 절차 스텝 --- */
+        .step-list {
+            display: flex;
+            gap: 0;
+            align-items: stretch;
+            overflow-x: auto;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 130px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -1px;
+            top: 28px;
+            width: 2px;
+            height: 20px;
+            background: var(--c-border);
+        }
+
+        /* Arrow between steps */
+        .step-arrow {
+            display: flex;
+            align-items: center;
+            padding-top: 20px;
+            color: var(--c-mustard-dark);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-flow {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .step-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 110px;
+            flex-shrink: 0;
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--c-text-main);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        .step-label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--c-text-main);
+            line-height: 1.4;
+        }
+
+        .step-desc {
+            font-size: 0.78rem;
+            color: var(--c-text-sub);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        .step-connector {
+            display: flex;
+            align-items: center;
+            padding-top: 10px;
+            color: var(--c-mustard-dark);
+            flex-shrink: 0;
+        }
+
+        /* --- 서류 목록 --- */
+        .doc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .doc-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 20px;
+            background: #fff;
+            border: 1px solid var(--c-border);
+            border-radius: 10px;
+            font-size: 0.93rem;
+            color: var(--c-text-main);
+            line-height: 1.6;
+        }
+
+        .doc-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--c-mustard-dark);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .doc-note {
+            display: block;
+            font-size: 0.83rem;
+            color: var(--c-text-sub);
+            margin-top: 3px;
+        }
+
+        /* --- 안내 박스 (주의/강조) --- */
+        .notice-box {
+            border-radius: 12px;
+            padding: 24px 28px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .notice-box.warn {
+            background: #FFF8F0;
+            border: 1px solid rgba(201, 131, 42, 0.25);
+        }
+
+        .notice-box.info {
+            background: #F5F3EE;
+            border: 1px solid var(--c-border);
+        }
+
+        .notice-box-icon {
+            font-size: 1.3rem;
+            color: var(--c-mustard-dark);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .notice-box-body {
+            flex: 1;
+        }
+
+        .notice-box-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--c-text-main);
+            margin-bottom: 8px;
+        }
+
+        .notice-box-text {
+            font-size: 0.88rem;
+            color: var(--c-text-sub);
+            line-height: 1.7;
+        }
+
+        .notice-box-text + .notice-box-text {
+            margin-top: 6px;
+        }
+
+        /* --- 회비 박스 --- */
+        .fee-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .fee-card {
+            background: #fff;
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-bento);
+            padding: 28px;
+        }
+
+        .fee-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--c-mustard-dark);
+            margin-bottom: 10px;
+        }
+
+        .fee-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--c-text-main);
+            margin-bottom: 8px;
+        }
+
+        .fee-desc {
+            font-size: 0.88rem;
+            color: var(--c-text-sub);
+            line-height: 1.7;
+        }
+
+        /* --- CTA 신청 버튼 영역 --- */
+        .cta-section {
+            background: var(--c-text-main);
+            border-radius: var(--radius-bento);
+            padding: 48px 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .cta-body h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .cta-body p {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: var(--c-mustard-dark);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.15s;
+            flex-shrink: 0;
+        }
+
+        .cta-btn:hover {
+            background: var(--c-mustard);
+            transform: translateY(-1px);
+        }
+
+        /* Active nav indicator */
+        .main-menu a.is-active-section {
+            color: var(--c-text-main);
+            font-weight: 700;
+        }
+
+        .main-menu a.is-active-section::after {
+            width: 100%;
+        }
+
+        /* ===================================
+           Responsive
+        =================================== */
+        @media (max-width: 1024px) {
+            .qual-grid { grid-template-columns: 1fr; }
+            .qual-card.full-width { grid-column: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero { padding: 44px 0 36px; }
+
+            .page-title {
+                font-size: 2.2rem;
+                letter-spacing: -1px;
+            }
+
+            .sub-nav a {
+                padding: 13px 16px;
+                font-size: 0.87rem;
+            }
+
+            .info-table th {
+                width: 100px;
+                padding: 14px;
+                font-size: 0.84rem;
+                white-space: normal;
+            }
+
+            .info-table td {
+                padding: 14px 16px;
+                font-size: 0.88rem;
+            }
+
+            .step-flow { gap: 4px; }
+
+            .step-box { min-width: 90px; }
+
+            .step-label { font-size: 0.8rem; }
+
+            .step-desc { font-size: 0.72rem; }
+
+            .fee-row { grid-template-columns: 1fr; }
+
+            .cta-section {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 32px 28px;
+            }
+
+            .page-content { padding: 44px 0 72px; }
+        }
+
+        @media (max-width: 480px) {
+            .step-flow { flex-wrap: wrap; justify-content: center; }
+            .step-connector { display: none; }
+            .step-box { min-width: 80px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== 공통 헤더 ===== -->
+    <header class="gnb">
+        <div class="gnb-container g-layout">
+            <a href="../index.html" class="logo" aria-label="홈으로 이동">
+                <span class="logo-mark"><i class="ph ph-pen-nib"></i></span>
+                <span class="logo-text serif">KTRWA.</span>
+            </a>
+
+            <nav class="main-menu" aria-label="주요 메뉴">
+                <div class="menu-item">
+                    <a href="../about/index.html">협회소개</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="../about/index.html" role="menuitem">협회소개</a></li>
+                        <li role="none"><a href="../about/greeting.html" role="menuitem">인사말</a></li>
+                        <li role="none"><a href="../business-guide.html" role="menuitem">업무안내</a></li>
+                        <li role="none"><a href="../about/history.html" role="menuitem">연혁</a></li>
+                        <li role="none"><a href="../about/projects.html" role="menuitem">주요사업</a></li>
+                        <li role="none"><a href="../about/charter.html" role="menuitem">정관</a></li>
+                        <li role="none"><a href="../about/org-chart.html" role="menuitem">조직도</a></li>
+                        <li role="none"><a href="../about/directions.html" role="menuitem">찾아오시는 길</a></li>
+                        <li role="none"><a href="../about/writers-award.html" role="menuitem">방송작가상</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <a href="../info/notices.html">정보공간</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="../info/notices.html" role="menuitem">공지사항</a></li>
+                        <li role="none"><a href="../info/press.html" role="menuitem">보도자료</a></li>
+                        <li role="none"><a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer" role="menuitem">방송작가 웹진</a></li>
+                        <li role="none"><a href="../info/standard-contract.html" role="menuitem">표준집필계약서</a></li>
+                        <li role="none"><a href="../info/copyright-guide.html" role="menuitem">저작 및 저작물</a></li>
+                        <li role="none"><a href="../info/related-news.html" role="menuitem">유관단체 소식</a></li>
+                        <li role="none"><a href="https://www.ktrwa.or.kr/web/copyright/copyrightWorkListPage.do" target="_blank" rel="noopener noreferrer" role="menuitem">회원/저작물 검색</a></li>
+                    </ul>
+                </div>
+                <div class="menu-item">
+                    <a href="../join/index.html" class="is-active-section">입회안내</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a href="../join/index.html" role="menuitem">입회안내</a></li>
+                        <li role="none"><a href="../join/apply.html" role="menuitem">입회신청</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="util-menu">
+                <a class="util-btn"
+                    href="https://www.ktrwa.or.kr/web/intgSch/intgSchListPage.do"
+                    target="_blank" rel="noopener noreferrer" aria-label="통합검색 열기">
+                    <i class="ph ph-magnifying-glass"></i>
+                </a>
+                <a href="https://www.ktrwa.or.kr/web/user/login.do"
+                    target="_blank" rel="noopener noreferrer" class="login-btn">LOGIN</a>
+                <a class="menu-btn en-btn"
+                    href="https://www.ktrwa.or.kr/eng/index.do"
+                    target="_blank" rel="noopener noreferrer" aria-label="영문 페이지 열기">EN</a>
+                <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="메뉴 열기">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== 페이지 타이틀 영역 ===== -->
+        <div class="page-hero">
+            <div class="g-layout">
+                <nav class="breadcrumb" aria-label="현재 위치">
+                    <a href="../index.html"><i class="ph ph-house"></i> 홈</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <span class="bc-current">입회안내</span>
+                </nav>
+                <p class="page-title-en">Membership Guide</p>
+                <h1 class="page-title">입회안내</h1>
+            </div>
+        </div>
+
+        <!-- ===== 서브 네비게이션 ===== -->
+        <nav class="sub-nav" aria-label="입회안내 하위 메뉴">
+            <div class="g-layout sub-nav-inner">
+                <a href="./index.html" class="is-active">
+                    <i class="ph ph-info"></i> 입회안내
+                </a>
+                <a href="https://www.ktrwa.or.kr/web/userApp/userAppWrite1.do" target="_blank" rel="noopener noreferrer">
+                    <i class="ph ph-pencil-line"></i> 입회신청
+                </a>
+            </div>
+        </nav>
+
+        <!-- ===== 본문 콘텐츠 ===== -->
+        <div class="page-content g-layout">
+
+            <!-- 1. 입회 자격 요건 -->
+            <section class="content-section" aria-labelledby="sec-qual">
+                <h2 class="section-heading" id="sec-qual">
+                    <i class="ph ph-check-circle"></i>입회 자격 요건
+                </h2>
+                <p style="font-size:0.93rem; color:var(--c-text-sub); margin-bottom:24px; line-height:1.7;">
+                    국내 각 방송사에서 현재 방송 작품을 집필하는 작가로서, <strong style="color:var(--c-text-main);">서류 접수 기준 최근 3년 이내의 활동 경력</strong>이 있어야 합니다.
+                </p>
+
+                <div class="qual-grid">
+                    <!-- 드라마 부문 -->
+                    <div class="qual-card">
+                        <div class="qual-card-top">
+                            <div class="qual-icon"><i class="ph ph-film-strip"></i></div>
+                            <div class="qual-name">드라마 부문</div>
+                        </div>
+                        <ul class="qual-items">
+                            <li>
+                                단막극: 2편 이상, 총 방송시간 120분 이상
+                            </li>
+                            <li>
+                                시리즈물: 1편 이상, 총 방송시간 240분 이상
+                            </li>
+                            <li>
+                                공동집필 시 1인 기준으로 각각 방송시간 충족 필요
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 비드라마 – 라디오 -->
+                    <div class="qual-card">
+                        <div class="qual-card-top">
+                            <div class="qual-icon"><i class="ph ph-radio"></i></div>
+                            <div class="qual-name">비드라마 — 라디오</div>
+                        </div>
+                        <ul class="qual-items">
+                            <li>
+                                지상파 라디오 분야에서 3년 이상 집필 활동
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 비드라마 – 시사교양 -->
+                    <div class="qual-card">
+                        <div class="qual-card-top">
+                            <div class="qual-icon"><i class="ph ph-newspaper"></i></div>
+                            <div class="qual-name">비드라마 — 시사교양</div>
+                        </div>
+                        <ul class="qual-items">
+                            <li>
+                                메인작가 1년을 포함하여 총 4년 이상 집필 활동
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 비드라마 – 예능 -->
+                    <div class="qual-card">
+                        <div class="qual-card-top">
+                            <div class="qual-icon"><i class="ph ph-smiley"></i></div>
+                            <div class="qual-name">비드라마 — 예능</div>
+                        </div>
+                        <ul class="qual-items">
+                            <li>
+                                5년 이상 집필 활동
+                                <span class="note">복수 프로그램의 경우 기간 합산 인정</span>
+                            </li>
+                            <li>
+                                시트콤은 실제 집필 기간의 2배로 산정
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 외화번역 -->
+                    <div class="qual-card full-width">
+                        <div class="qual-card-top">
+                            <div class="qual-icon"><i class="ph ph-translate"></i></div>
+                            <div class="qual-name">외화번역 부문</div>
+                        </div>
+                        <ul class="qual-items">
+                            <li>
+                                30분물 기준 외화 10편 이상 번역, 3년 이상 활동
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 입회 절차 -->
+            <section class="content-section" aria-labelledby="sec-process">
+                <h2 class="section-heading" id="sec-process">
+                    <i class="ph ph-arrows-horizontal"></i>입회 절차
+                </h2>
+
+                <div class="step-flow" role="list" aria-label="입회 절차 단계">
+                    <div class="step-box" role="listitem">
+                        <div class="step-num">1</div>
+                        <div class="step-label">추천</div>
+                        <div class="step-desc">정회원 3인 추천<br>(심사위원 제외)</div>
+                    </div>
+                    <div class="step-connector" aria-hidden="true"><i class="ph ph-caret-right"></i></div>
+
+                    <div class="step-box" role="listitem">
+                        <div class="step-num">2</div>
+                        <div class="step-label">서류 접수</div>
+                        <div class="step-desc">입회원서 &amp;<br>구비서류 제출</div>
+                    </div>
+                    <div class="step-connector" aria-hidden="true"><i class="ph ph-caret-right"></i></div>
+
+                    <div class="step-box" role="listitem">
+                        <div class="step-num">3</div>
+                        <div class="step-label">서류 검토</div>
+                        <div class="step-desc">협회 사무국<br>1차 검토</div>
+                    </div>
+                    <div class="step-connector" aria-hidden="true"><i class="ph ph-caret-right"></i></div>
+
+                    <div class="step-box" role="listitem">
+                        <div class="step-num">4</div>
+                        <div class="step-label">심사위원회</div>
+                        <div class="step-desc">1차 심사<br>(재적 과반 의결)</div>
+                    </div>
+                    <div class="step-connector" aria-hidden="true"><i class="ph ph-caret-right"></i></div>
+
+                    <div class="step-box" role="listitem">
+                        <div class="step-num">5</div>
+                        <div class="step-label">이사회 의결</div>
+                        <div class="step-desc">최종 심의<br>입회 확정</div>
+                    </div>
+                    <div class="step-connector" aria-hidden="true"><i class="ph ph-caret-right"></i></div>
+
+                    <div class="step-box" role="listitem">
+                        <div class="step-num">6</div>
+                        <div class="step-label">오리엔테이션</div>
+                        <div class="step-desc">의결 후 15일 이내<br>필참 + 입회비 납부</div>
+                    </div>
+                </div>
+
+                <div class="notice-box warn" style="margin-top:24px;">
+                    <div class="notice-box-icon"><i class="ph ph-warning"></i></div>
+                    <div class="notice-box-body">
+                        <div class="notice-box-title">오리엔테이션 필참 안내</div>
+                        <p class="notice-box-text">
+                            이사회 의결로 입회가 확정된 회원은 의결일로부터 <strong>15일 이내에 오리엔테이션에 반드시 참석</strong>하고 입회비를 납부해야 합니다.
+                        </p>
+                        <p class="notice-box-text">
+                            미참석 또는 미납부 시 입회 자격이 자동으로 상실됩니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 구비서류 -->
+            <section class="content-section" aria-labelledby="sec-docs">
+                <h2 class="section-heading" id="sec-docs">
+                    <i class="ph ph-folder-open"></i>구비서류
+                </h2>
+                <ul class="doc-list" aria-label="입회 구비서류 목록">
+                    <li>
+                        <div class="doc-num">1</div>
+                        <div>
+                            입회원서
+                            <span class="doc-note">협회 온라인 양식(입회신청 메뉴) 작성 후 제출</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="doc-num">2</div>
+                        <div>
+                            원고료 원천징수영수증
+                            <span class="doc-note">방송 집필 활동을 증빙하는 서류</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="doc-num">3</div>
+                        <div>
+                            주민등록등본 1통
+                            <span class="doc-note">3개월 이내 발급본</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="doc-num">4</div>
+                        <div>
+                            증명사진 2매
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 4. 회비 안내 -->
+            <section class="content-section" aria-labelledby="sec-fee">
+                <h2 class="section-heading" id="sec-fee">
+                    <i class="ph ph-currency-krw"></i>회비 안내
+                </h2>
+                <div class="fee-row">
+                    <div class="fee-card">
+                        <div class="fee-label">Admission Fee</div>
+                        <div class="fee-title">입회비</div>
+                        <div class="fee-desc">
+                            입회 확정 후 오리엔테이션 시 납부합니다.<br>
+                            금액은 이사회 의결로 조정될 수 있습니다.
+                        </div>
+                    </div>
+                    <div class="fee-card">
+                        <div class="fee-label">Monthly Fee</div>
+                        <div class="fee-title">월 회비</div>
+                        <div class="fee-desc">
+                            매월 소정의 회비를 납부합니다.<br>
+                            입회된 달의 회비는 면제됩니다.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 탈퇴 및 재입회 -->
+            <section class="content-section" aria-labelledby="sec-withdrawal">
+                <h2 class="section-heading" id="sec-withdrawal">
+                    <i class="ph ph-sign-out"></i>탈퇴 및 재입회
+                </h2>
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">탈퇴 신청</th>
+                            <td>
+                                탈퇴서(본인 작성)를 협회에 제출하면 자동으로 처리됩니다.
+                                <span class="sub-text">입회비는 환급되지 않습니다.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">재입회 조건</th>
+                            <td>
+                                회원 자격 상실 후 <strong>5년이 경과</strong>한 경우에 한해 재입회가 가능합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">재입회 절차</th>
+                            <td>
+                                일반 입회 절차와 동일하게 진행됩니다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 6. 유의사항 -->
+            <section class="content-section" aria-labelledby="sec-notice">
+                <h2 class="section-heading" id="sec-notice">
+                    <i class="ph ph-seal-warning"></i>유의사항
+                </h2>
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    <div class="notice-box warn">
+                        <div class="notice-box-icon"><i class="ph ph-prohibit"></i></div>
+                        <div class="notice-box-body">
+                            <div class="notice-box-title">허위 기재 시 제재</div>
+                            <p class="notice-box-text">
+                                집필 사실을 허위로 기재하여 입회한 사실이 확인될 경우, 해당 회원의 입회는 취소되며
+                                <strong>5년간 협회 입회가 규제</strong>됩니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notice-box info">
+                        <div class="notice-box-icon"><i class="ph ph-clock"></i></div>
+                        <div class="notice-box-body">
+                            <div class="notice-box-title">입회 유보</div>
+                            <p class="notice-box-text">
+                                이사회 의결에 따라 입회가 일시 유보될 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notice-box info">
+                        <div class="notice-box-icon"><i class="ph ph-info"></i></div>
+                        <div class="notice-box-body">
+                            <div class="notice-box-title">규정 근거</div>
+                            <p class="notice-box-text">
+                                본 안내는 「사단법인 한국방송작가협회 회원입회 및 탈퇴규정」(1988년 제정, 2023년 5월 25일 최종 개정)에 근거합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. 입회신청 CTA -->
+            <section class="content-section" aria-labelledby="sec-cta">
+                <div class="cta-section">
+                    <div class="cta-body">
+                        <h3>입회신청 바로가기</h3>
+                        <p>자격 요건을 확인하셨다면 입회신청 페이지에서 온라인으로 신청하실 수 있습니다.</p>
+                    </div>
+                    <a href="https://www.ktrwa.or.kr/web/userApp/userAppWrite1.do" target="_blank" rel="noopener noreferrer" class="cta-btn">
+                        <i class="ph ph-pencil-line"></i> 입회신청
+                    </a>
+                </div>
+            </section>
+
+        </div><!-- /page-content -->
+    </main>
+
+    <script>
+        // 모바일 메뉴 토글 (business-guide.html과 동일 로직)
+        const gnb = document.querySelector('.gnb');
+        const mobileMenuButton = document.querySelector('.mobile-menu-btn');
+
+        mobileMenuButton?.addEventListener('click', () => {
+            const opened = gnb.classList.toggle('menu-open');
+            mobileMenuButton.setAttribute('aria-expanded', String(opened));
+            mobileMenuButton.setAttribute('aria-label', opened ? '메뉴 닫기' : '메뉴 열기');
+            const icon = mobileMenuButton.querySelector('i');
+            if (icon) icon.className = opened ? 'ph ph-x' : 'ph ph-list';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!gnb.contains(e.target)) {
+                gnb.classList.remove('menu-open');
+                mobileMenuButton?.setAttribute('aria-expanded', 'false');
+                mobileMenuButton?.setAttribute('aria-label', '메뉴 열기');
+                const icon = mobileMenuButton?.querySelector('i');
+                if (icon) icon.className = 'ph ph-list';
+            }
+        });
+    </script>
+
+    <footer class="site-footer">
+        <div class="footer-inner g-layout">
+            <div class="footer-brand">
+                <span class="footer-logo-mark"><i class="ph ph-pen-nib"></i></span>
+                <span class="footer-logo-text">사단법인 한국방송작가협회</span>
+            </div>
+            <div class="footer-info">
+                <p>대표자: 정재홍 &nbsp;|&nbsp; 사업자등록번호: 116-82-03273</p>
+                <p>(07236) 서울시 영등포구 국회대로 750 금산빌딩 4층</p>
+                <p>Tel: 02-782-1696 &nbsp;|&nbsp; Fax: 02-783-3711</p>
+            </div>
+            <nav class="footer-policy" aria-label="정책 메뉴">
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=e12dcf81dcf14d9c89a2c59e89eadce5" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=44cd7eb5c91b4f18acd63d3d6d3a0699" target="_blank" rel="noopener noreferrer">이용약관</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=3a0a028a3d77434b882cbde4e4ef8e18" target="_blank" rel="noopener noreferrer">이메일 수집거부</a>
+                <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=f0ce2eb843bb4d54a5ce2a2cd2f67e49" target="_blank" rel="noopener noreferrer">찾아오시는 길</a>
+            </nav>
+            <p class="footer-copy">© Korea TV &amp; Radio Writers Association. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
