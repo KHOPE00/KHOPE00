@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정관 — 한국방송작가협회 KTRWA</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .page-hero { background-color:#F8F9FA; margin-top:90px; border-bottom:1px solid var(--c-border); padding:52px 0 44px; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--c-text-sub); margin-bottom:22px; }
+    .breadcrumb a { color:var(--c-text-sub); transition:color 0.2s; display:inline-flex; align-items:center; gap:4px; text-decoration:none; }
+    .breadcrumb a:hover { color:var(--c-text-main); }
+    .breadcrumb-sep { opacity:0.35; font-size:0.75rem; }
+    .breadcrumb .bc-current { color:var(--c-text-main); font-weight:600; }
+    .page-title-en { font-family:var(--font-serif); font-style:italic; font-size:1rem; color:var(--c-text-sub); margin-bottom:6px; }
+    .page-title { font-size:2.8rem; font-weight:700; letter-spacing:-1.5px; color:var(--c-text-main); line-height:1.1; }
+    .sub-nav { background:#fff; border-bottom:1px solid var(--c-border); position:sticky; top:72px; z-index:90; }
+    .sub-nav-inner { display:flex; gap:0; overflow-x:auto; }
+    .sub-nav a { display:inline-flex; align-items:center; gap:7px; padding:16px 24px; font-size:0.92rem; font-weight:500; color:var(--c-text-sub); border-bottom:2px solid transparent; transition:color 0.2s,border-color 0.2s; white-space:nowrap; text-decoration:none; }
+    .sub-nav a:hover { color:var(--c-text-main); }
+    .sub-nav a.is-active { color:var(--c-text-main); font-weight:700; border-bottom-color:var(--c-mustard-dark); }
+    .page-content { padding:60px 0 100px; }
+    .charter-doc { max-width:800px; }
+    .charter-doc h2 { font-size:1.5rem; font-weight:800; text-align:center; color:var(--c-text-main); margin-bottom:8px; }
+    .charter-doc .doc-subtitle { text-align:center; color:var(--c-text-sub); font-size:.875rem; margin-bottom:40px; }
+    .chapter { margin-bottom:36px; }
+    .chapter h3 { font-size:1rem; font-weight:700; color:var(--c-text-main); border-bottom:2px solid var(--c-mustard-dark); padding-bottom:8px; margin-bottom:16px; }
+    .article { margin-bottom:20px; }
+    .article-title { font-weight:700; color:var(--c-text-main); font-size:.9375rem; margin-bottom:6px; }
+    .article p { font-size:.875rem; line-height:1.85; color:var(--c-text-sub); margin-bottom:4px; }
+    .article ol { padding-left:20px; margin-top:6px; }
+    .article ol li { font-size:.875rem; color:var(--c-text-sub); line-height:1.85; margin-bottom:4px; }
+  </style>
+</head>
+<body>
+  <header class="gnb">
+    <div class="gnb-container g-layout">
+      <a href="../index.html" class="logo" aria-label="홈으로 이동">
+        <span class="logo-mark"><i class="ph ph-pen-nib"></i></span>
+        <span class="logo-text serif">KTRWA.</span>
+      </a>
+      <nav class="main-menu" aria-label="주요 메뉴">
+        <div class="menu-item">
+          <a href="../about/index.html" class="is-active-section">협회소개</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../about/index.html" role="menuitem">협회소개</a></li>
+            <li role="none"><a href="../about/greeting.html" role="menuitem">인사말</a></li>
+            <li role="none"><a href="../business-guide.html" role="menuitem">업무안내</a></li>
+            <li role="none"><a href="../about/history.html" role="menuitem">연혁</a></li>
+            <li role="none"><a href="../about/projects.html" role="menuitem">주요사업</a></li>
+            <li role="none"><a href="../about/charter.html" role="menuitem">정관</a></li>
+            <li role="none"><a href="../about/org-chart.html" role="menuitem">조직도</a></li>
+            <li role="none"><a href="../about/directions.html" role="menuitem">찾아오시는 길</a></li>
+            <li role="none"><a href="../about/writers-award.html" role="menuitem">방송작가상</a></li>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <a href="../info/notices.html">정보공간</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../info/notices.html" role="menuitem">공지사항</a></li>
+            <li role="none"><a href="../info/press.html" role="menuitem">보도자료</a></li>
+            <li role="none"><a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer" role="menuitem">방송작가 웹진</a></li>
+            <li role="none"><a href="../info/standard-contract.html" role="menuitem">표준집필계약서</a></li>
+            <li role="none"><a href="../info/copyright-guide.html" role="menuitem">저작 및 저작물</a></li>
+            <li role="none"><a href="../info/related-news.html" role="menuitem">유관단체 소식</a></li>
+            <li role="none"><a href="https://www.ktrwa.or.kr/web/copyright/copyrightWorkListPage.do" target="_blank" rel="noopener noreferrer" role="menuitem">회원/저작물 검색</a></li>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <a href="../join/index.html">입회안내</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../join/index.html" role="menuitem">입회안내</a></li>
+            <li role="none"><a href="../join/apply.html" role="menuitem">입회신청</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="util-menu">
+        <a class="util-btn" href="https://www.ktrwa.or.kr/web/intgSch/intgSchListPage.do" target="_blank" rel="noopener noreferrer" aria-label="통합검색 열기"><i class="ph ph-magnifying-glass"></i></a>
+        <a href="https://www.ktrwa.or.kr/web/user/login.do" target="_blank" rel="noopener noreferrer" class="login-btn">LOGIN</a>
+        <a class="menu-btn en-btn" href="https://www.ktrwa.or.kr/eng/index.do" target="_blank" rel="noopener noreferrer" aria-label="영문 페이지 열기">EN</a>
+        <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="메뉴 열기">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="g-layout">
+        <nav class="breadcrumb" aria-label="현재 위치">
+          <a href="../index.html"><i class="ph ph-house"></i> 홈</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="./index.html">협회소개</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="bc-current">정관</span>
+        </nav>
+        <p class="page-title-en">Constitution</p>
+        <h1 class="page-title">정관</h1>
+      </div>
+    </div>
+
+    <nav class="sub-nav" aria-label="협회소개 하위 메뉴">
+      <div class="g-layout sub-nav-inner">
+        <a href="./index.html">협회소개</a>
+        <a href="./greeting.html">인사말</a>
+        <a href="../business-guide.html">업무안내</a>
+        <a href="./history.html">연혁</a>
+        <a href="./projects.html">주요사업</a>
+        <a href="./charter.html" class="is-active">정관</a>
+        <a href="./org-chart.html">조직도</a>
+        <a href="./directions.html">찾아오시는 길</a>
+        <a href="./writers-award.html">방송작가상</a>
+      </div>
+    </nav>
+
+    <section class="page-content">
+      <div class="g-layout">
+        <div class="charter-doc">
+          <h2>사단법인 한국방송작가협회 정관</h2>
+          <p class="doc-subtitle">최종 개정일자 기준 (정관 원문은 공식 사이트에서 확인하시기 바랍니다)</p>
+
+          <div class="chapter">
+            <h3>제1장 총 칙</h3>
+            <div class="article">
+              <p class="article-title">제1조 (명칭)</p>
+              <p>이 법인은 사단법인 한국방송작가협회(이하 "협회"라 한다)라 칭하고, 영문으로는 Korean Television and Radio Writers Association(약칭 KTRWA)이라 한다.</p>
+            </div>
+            <div class="article">
+              <p class="article-title">제2조 (목적)</p>
+              <p>협회는 방송작가의 권익 보호와 자질 향상 및 방송문화 발전에 기여함을 목적으로 한다.</p>
+            </div>
+            <div class="article">
+              <p class="article-title">제3조 (사무소)</p>
+              <p>협회의 사무소는 서울특별시에 둔다. 필요한 경우 지부 또는 지회를 설치할 수 있다.</p>
+            </div>
+            <div class="article">
+              <p class="article-title">제4조 (사업)</p>
+              <p>협회는 제2조의 목적을 달성하기 위하여 다음 각 호의 사업을 한다.</p>
+              <ol>
+                <li>방송작가의 권익 보호에 관한 사업</li>
+                <li>방송작가의 자질 향상을 위한 교육 및 연수에 관한 사업</li>
+                <li>방송작가 복지에 관한 사업</li>
+                <li>방송작가상 시상에 관한 사업</li>
+                <li>방송문화 발전에 관한 사업</li>
+                <li>방송작가 저작권 보호에 관한 사업</li>
+                <li>기타 협회의 목적에 부합하는 사업</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="chapter">
+            <h3>제2장 회 원</h3>
+            <div class="article">
+              <p class="article-title">제5조 (회원의 구분)</p>
+              <p>협회의 회원은 정회원, 준회원, 명예회원으로 구분한다.</p>
+              <ol>
+                <li>정회원: 방송작가로 활동하고 있는 자로서 소정의 절차를 거쳐 입회한 자</li>
+                <li>준회원: 방송작가를 지망하는 자로서 소정의 절차를 거쳐 입회한 자</li>
+                <li>명예회원: 방송문화 발전에 현저한 공로가 있는 자로서 이사회의 의결을 거쳐 추대된 자</li>
+              </ol>
+            </div>
+            <div class="article">
+              <p class="article-title">제6조 (회원의 권리)</p>
+              <p>정회원은 총회에서 선거권 및 피선거권을 가지며, 협회가 제공하는 각종 서비스와 혜택을 받을 권리를 가진다.</p>
+            </div>
+            <div class="article">
+              <p class="article-title">제7조 (회원의 의무)</p>
+              <p>회원은 다음 각 호의 의무를 진다.</p>
+              <ol>
+                <li>정관 및 협회의 제 규정을 준수할 의무</li>
+                <li>총회 및 이사회의 결의 사항을 이행할 의무</li>
+                <li>회비를 납부할 의무</li>
+                <li>협회의 명예를 훼손하는 행위를 하지 않을 의무</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="chapter">
+            <h3>제3장 임 원</h3>
+            <div class="article">
+              <p class="article-title">제8조 (임원의 구성)</p>
+              <p>협회에는 다음과 같은 임원을 둔다.</p>
+              <ol>
+                <li>회장 1인</li>
+                <li>부회장 약간인</li>
+                <li>이사 15인 이상 25인 이내(회장, 부회장 포함)</li>
+                <li>감사 2인</li>
+              </ol>
+            </div>
+            <div class="article">
+              <p class="article-title">제9조 (임원의 선임)</p>
+              <p>회장은 총회에서 정회원 중에서 선출한다. 부회장 및 이사는 이사회의 의결을 거쳐 선임하며, 감사는 총회에서 선출한다.</p>
+            </div>
+            <div class="article">
+              <p class="article-title">제10조 (임원의 임기)</p>
+              <p>임원의 임기는 2년으로 하며, 연임할 수 있다.</p>
+            </div>
+          </div>
+
+          <div class="chapter">
+            <h3>제4장 총 회</h3>
+            <div class="article">
+              <p class="article-title">제11조 (총회의 구성)</p>
+              <p>총회는 정회원으로 구성하며, 협회의 최고 의결기관이다.</p>
+            </div>
+            <div class="article">
+              <p class="article-title">제12조 (총회의 소집)</p>
+              <p>정기총회는 매년 1회 소집하고, 임시총회는 회장이 필요하다고 인정할 때 또는 이사회의 의결이 있을 때 소집한다.</p>
+            </div>
+          </div>
+
+          <div class="chapter">
+            <h3>제5장 재 정</h3>
+            <div class="article">
+              <p class="article-title">제13조 (재정)</p>
+              <p>협회의 재정은 회비, 사업 수입, 기부금, 보조금 기타 수입으로 충당한다.</p>
+            </div>
+            <div class="article">
+              <p class="article-title">제14조 (회계연도)</p>
+              <p>협회의 회계연도는 매년 1월 1일부터 12월 31일까지로 한다.</p>
+            </div>
+          </div>
+
+          <div class="chapter">
+            <h3>부 칙</h3>
+            <div class="article">
+              <p>이 정관은 주무관청의 인가를 받은 날로부터 시행한다.</p>
+              <p style="margin-top:12px;font-size:.8rem;color:var(--c-text-sub);">※ 정관 전문은 협회 사무국에 문의하시거나 공식 사이트를 통해 열람하실 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner g-layout">
+      <div class="footer-brand">
+        <span class="footer-logo-mark"><i class="ph ph-pen-nib"></i></span>
+        <span class="footer-logo-text">사단법인 한국방송작가협회</span>
+      </div>
+      <div class="footer-info">
+        <p>대표자: 정재홍 &nbsp;|&nbsp; 사업자등록번호: 116-82-03273</p>
+        <p>(07236) 서울시 영등포구 국회대로 750 금산빌딩 4층</p>
+        <p>Tel: 02-782-1696 &nbsp;|&nbsp; Fax: 02-783-3711</p>
+      </div>
+      <nav class="footer-policy" aria-label="정책 메뉴">
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=e12dcf81dcf14d9c89a2c59e89eadce5" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=44cd7eb5c91b4f18acd63d3d6d3a0699" target="_blank" rel="noopener noreferrer">이용약관</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=3a0a028a3d77434b882cbde4e4ef8e18" target="_blank" rel="noopener noreferrer">이메일 수집거부</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=f0ce2eb843bb4d54a5ce2a2cd2f67e49" target="_blank" rel="noopener noreferrer">찾아오시는 길</a>
+      </nav>
+      <p class="footer-copy">© Korea TV &amp; Radio Writers Association. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const gnb = document.querySelector('.gnb');
+    const mobileMenuButton = document.querySelector('.mobile-menu-btn');
+    mobileMenuButton?.addEventListener('click', () => {
+      const opened = gnb.classList.toggle('menu-open');
+      mobileMenuButton.setAttribute('aria-expanded', String(opened));
+      mobileMenuButton.setAttribute('aria-label', opened ? '메뉴 닫기' : '메뉴 열기');
+      const icon = mobileMenuButton.querySelector('i');
+      if (icon) icon.className = opened ? 'ph ph-x' : 'ph ph-list';
+    });
+    document.addEventListener('click', (e) => {
+      if (!gnb.contains(e.target)) {
+        gnb.classList.remove('menu-open');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+        mobileMenuButton?.setAttribute('aria-label', '메뉴 열기');
+        const icon = mobileMenuButton?.querySelector('i');
+        if (icon) icon.className = 'ph ph-list';
+      }
+    });
+  </script>
+</body>
+</html>

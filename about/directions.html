@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>찾아오시는 길 — 한국방송작가협회 KTRWA</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .page-hero { background-color:#F8F9FA; margin-top:90px; border-bottom:1px solid var(--c-border); padding:52px 0 44px; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--c-text-sub); margin-bottom:22px; }
+    .breadcrumb a { color:var(--c-text-sub); transition:color 0.2s; display:inline-flex; align-items:center; gap:4px; text-decoration:none; }
+    .breadcrumb a:hover { color:var(--c-text-main); }
+    .breadcrumb-sep { opacity:0.35; font-size:0.75rem; }
+    .breadcrumb .bc-current { color:var(--c-text-main); font-weight:600; }
+    .page-title-en { font-family:var(--font-serif); font-style:italic; font-size:1rem; color:var(--c-text-sub); margin-bottom:6px; }
+    .page-title { font-size:2.8rem; font-weight:700; letter-spacing:-1.5px; color:var(--c-text-main); line-height:1.1; }
+    .sub-nav { background:#fff; border-bottom:1px solid var(--c-border); position:sticky; top:72px; z-index:90; }
+    .sub-nav-inner { display:flex; gap:0; overflow-x:auto; }
+    .sub-nav a { display:inline-flex; align-items:center; gap:7px; padding:16px 24px; font-size:0.92rem; font-weight:500; color:var(--c-text-sub); border-bottom:2px solid transparent; transition:color 0.2s,border-color 0.2s; white-space:nowrap; text-decoration:none; }
+    .sub-nav a:hover { color:var(--c-text-main); }
+    .sub-nav a.is-active { color:var(--c-text-main); font-weight:700; border-bottom-color:var(--c-mustard-dark); }
+    .page-content { padding:60px 0 100px; }
+    .map-placeholder { width:100%; height:380px; background:linear-gradient(135deg,#e8eaf0,#d8dce8); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:40px; border:1px solid var(--c-border); }
+    .map-placeholder p { color:var(--c-text-sub); font-size:.875rem; text-align:center; line-height:1.6; }
+    .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-bottom:40px; }
+    .info-card { background:#fff; border:1px solid var(--c-border); border-radius:8px; padding:24px; }
+    .info-card h3 { font-size:.875rem; font-weight:700; color:var(--c-text-main); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+    .info-card h3::before { content:""; display:inline-block; width:4px; height:16px; background:var(--c-mustard); border-radius:2px; }
+    .info-card p { font-size:.875rem; color:var(--c-text-sub); line-height:1.75; margin:0; }
+    .transport-section h2 { font-size:1.2rem; font-weight:700; color:var(--c-text-main); margin-bottom:20px; }
+    .transport-list { display:flex; flex-direction:column; gap:16px; }
+    .transport-item { display:flex; gap:16px; align-items:flex-start; padding:16px; background:#F8F9FA; border-radius:6px; }
+    .transport-icon { flex-shrink:0; width:40px; height:40px; background:var(--c-text-main); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1rem; }
+    .transport-item h4 { font-size:.875rem; font-weight:700; color:var(--c-text-main); margin-bottom:4px; }
+    .transport-item p { font-size:.8125rem; color:var(--c-text-sub); line-height:1.7; margin:0; }
+  </style>
+</head>
+<body>
+  <header class="gnb">
+    <div class="gnb-container g-layout">
+      <a href="../index.html" class="logo" aria-label="홈으로 이동">
+        <span class="logo-mark"><i class="ph ph-pen-nib"></i></span>
+        <span class="logo-text serif">KTRWA.</span>
+      </a>
+      <nav class="main-menu" aria-label="주요 메뉴">
+        <div class="menu-item">
+          <a href="../about/index.html" class="is-active-section">협회소개</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../about/index.html" role="menuitem">협회소개</a></li>
+            <li role="none"><a href="../about/greeting.html" role="menuitem">인사말</a></li>
+            <li role="none"><a href="../business-guide.html" role="menuitem">업무안내</a></li>
+            <li role="none"><a href="../about/history.html" role="menuitem">연혁</a></li>
+            <li role="none"><a href="../about/projects.html" role="menuitem">주요사업</a></li>
+            <li role="none"><a href="../about/charter.html" role="menuitem">정관</a></li>
+            <li role="none"><a href="../about/org-chart.html" role="menuitem">조직도</a></li>
+            <li role="none"><a href="../about/directions.html" role="menuitem">찾아오시는 길</a></li>
+            <li role="none"><a href="../about/writers-award.html" role="menuitem">방송작가상</a></li>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <a href="../info/notices.html">정보공간</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../info/notices.html" role="menuitem">공지사항</a></li>
+            <li role="none"><a href="../info/press.html" role="menuitem">보도자료</a></li>
+            <li role="none"><a href="https://www.ktrwawebzine.kr/" target="_blank" rel="noopener noreferrer" role="menuitem">방송작가 웹진</a></li>
+            <li role="none"><a href="../info/standard-contract.html" role="menuitem">표준집필계약서</a></li>
+            <li role="none"><a href="../info/copyright-guide.html" role="menuitem">저작 및 저작물</a></li>
+            <li role="none"><a href="../info/related-news.html" role="menuitem">유관단체 소식</a></li>
+            <li role="none"><a href="https://www.ktrwa.or.kr/web/copyright/copyrightWorkListPage.do" target="_blank" rel="noopener noreferrer" role="menuitem">회원/저작물 검색</a></li>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <a href="../join/index.html">입회안내</a>
+          <ul class="submenu" role="menu">
+            <li role="none"><a href="../join/index.html" role="menuitem">입회안내</a></li>
+            <li role="none"><a href="../join/apply.html" role="menuitem">입회신청</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="util-menu">
+        <a class="util-btn" href="https://www.ktrwa.or.kr/web/intgSch/intgSchListPage.do" target="_blank" rel="noopener noreferrer" aria-label="통합검색 열기"><i class="ph ph-magnifying-glass"></i></a>
+        <a href="https://www.ktrwa.or.kr/web/user/login.do" target="_blank" rel="noopener noreferrer" class="login-btn">LOGIN</a>
+        <a class="menu-btn en-btn" href="https://www.ktrwa.or.kr/eng/index.do" target="_blank" rel="noopener noreferrer" aria-label="영문 페이지 열기">EN</a>
+        <button class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="메뉴 열기">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="g-layout">
+        <nav class="breadcrumb" aria-label="현재 위치">
+          <a href="../index.html"><i class="ph ph-house"></i> 홈</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="./index.html">협회소개</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="bc-current">찾아오시는 길</span>
+        </nav>
+        <p class="page-title-en">Directions</p>
+        <h1 class="page-title">찾아오시는 길</h1>
+      </div>
+    </div>
+
+    <nav class="sub-nav" aria-label="협회소개 하위 메뉴">
+      <div class="g-layout sub-nav-inner">
+        <a href="./index.html">협회소개</a>
+        <a href="./greeting.html">인사말</a>
+        <a href="../business-guide.html">업무안내</a>
+        <a href="./history.html">연혁</a>
+        <a href="./projects.html">주요사업</a>
+        <a href="./charter.html">정관</a>
+        <a href="./org-chart.html">조직도</a>
+        <a href="./directions.html" class="is-active">찾아오시는 길</a>
+        <a href="./writers-award.html">방송작가상</a>
+      </div>
+    </nav>
+
+    <section class="page-content">
+      <div class="g-layout">
+
+        <!-- Map area -->
+        <div class="map-placeholder">
+          <p>📍 서울특별시 양천구 목동동로 233-1<br>방송회관 6층 한국방송작가협회<br><br>
+          <a href="https://map.naver.com/v5/search/%EB%B0%A9%EC%86%A1%ED%9A%8C%EA%B4%80" target="_blank" rel="noopener noreferrer" style="color:var(--c-text-main);text-decoration:underline;">네이버 지도에서 보기</a>
+          &nbsp;|&nbsp;
+          <a href="https://map.kakao.com/?q=%EB%B0%A9%EC%86%A1%ED%9A%8C%EA%B4%80" target="_blank" rel="noopener noreferrer" style="color:var(--c-mustard-dark);text-decoration:underline;">카카오맵에서 보기</a>
+          </p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>주소</h3>
+            <p>서울특별시 양천구 목동동로 233-1<br>방송회관 6층</p>
+          </div>
+          <div class="info-card">
+            <h3>연락처</h3>
+            <p>Tel : 02-782-1696<br>Fax : 02-782-1697<br>이메일 : ktrwa@ktrwa.or.kr</p>
+          </div>
+          <div class="info-card">
+            <h3>업무시간</h3>
+            <p>평일 09:00 ~ 18:00<br>(점심 12:00 ~ 13:00)<br>토·일·공휴일 휴무</p>
+          </div>
+        </div>
+
+        <!-- Transport -->
+        <div class="transport-section">
+          <h2>오시는 방법</h2>
+          <div class="transport-list">
+            <div class="transport-item">
+              <div class="transport-icon">🚇</div>
+              <div>
+                <h4>지하철 이용 시</h4>
+                <p>5호선 목동역 1번 출구에서 도보 약 10분<br>2호선 당산역에서 버스 환승 후 방송회관 하차</p>
+              </div>
+            </div>
+            <div class="transport-item">
+              <div class="transport-icon">🚌</div>
+              <div>
+                <h4>버스 이용 시</h4>
+                <p>방송회관 정류장 하차<br>간선버스: 603, 605, 642번<br>지선버스: 5714, 5615번</p>
+              </div>
+            </div>
+            <div class="transport-item">
+              <div class="transport-icon">🚗</div>
+              <div>
+                <h4>자가용 이용 시</h4>
+                <p>방송회관 지하주차장 이용 가능 (유료)<br>내비게이션 검색: "방송회관" 또는 "목동동로 233-1"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner g-layout">
+      <div class="footer-brand">
+        <span class="footer-logo-mark"><i class="ph ph-pen-nib"></i></span>
+        <span class="footer-logo-text">사단법인 한국방송작가협회</span>
+      </div>
+      <div class="footer-info">
+        <p>대표자: 정재홍 &nbsp;|&nbsp; 사업자등록번호: 116-82-03273</p>
+        <p>(07236) 서울시 영등포구 국회대로 750 금산빌딩 4층</p>
+        <p>Tel: 02-782-1696 &nbsp;|&nbsp; Fax: 02-783-3711</p>
+      </div>
+      <nav class="footer-policy" aria-label="정책 메뉴">
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=e12dcf81dcf14d9c89a2c59e89eadce5" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=44cd7eb5c91b4f18acd63d3d6d3a0699" target="_blank" rel="noopener noreferrer">이용약관</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=3a0a028a3d77434b882cbde4e4ef8e18" target="_blank" rel="noopener noreferrer">이메일 수집거부</a>
+        <a href="https://www.ktrwa.or.kr/web/intropage/intropageShow.do?page_id=f0ce2eb843bb4d54a5ce2a2cd2f67e49" target="_blank" rel="noopener noreferrer">찾아오시는 길</a>
+      </nav>
+      <p class="footer-copy">© Korea TV &amp; Radio Writers Association. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const gnb = document.querySelector('.gnb');
+    const mobileMenuButton = document.querySelector('.mobile-menu-btn');
+    mobileMenuButton?.addEventListener('click', () => {
+      const opened = gnb.classList.toggle('menu-open');
+      mobileMenuButton.setAttribute('aria-expanded', String(opened));
+      mobileMenuButton.setAttribute('aria-label', opened ? '메뉴 닫기' : '메뉴 열기');
+      const icon = mobileMenuButton.querySelector('i');
+      if (icon) icon.className = opened ? 'ph ph-x' : 'ph ph-list';
+    });
+    document.addEventListener('click', (e) => {
+      if (!gnb.contains(e.target)) {
+        gnb.classList.remove('menu-open');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+        mobileMenuButton?.setAttribute('aria-label', '메뉴 열기');
+        const icon = mobileMenuButton?.querySelector('i');
+        if (icon) icon.className = 'ph ph-list';
+      }
+    });
+  </script>
+</body>
+</html>
